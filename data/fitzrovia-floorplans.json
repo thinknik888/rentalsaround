@@ -1,0 +1,1636 @@
+{
+  "source": "Fitzrovia Community Portfolio & Price Lists — July 2026",
+  "note": "Premiums apply for units on higher floors. Prices subject to change. E&OE.",
+  "communities": [
+    {
+      "id": "waverley",
+      "name": "Waverley",
+      "brand": "Fitzrovia",
+      "location": "College & Spadina",
+      "area": "Downtown Toronto",
+      "units": 166,
+      "range": "$2,615–$6,350",
+      "types": "Studios – 3 Bed",
+      "rentsFrom": 2475,
+      "leasingManager": "Stella Gomes",
+      "email": "waverleyleasing@fitzrovia.ca",
+      "realtorLine": "289-301-0670",
+      "hours": "Tues–Sat 9am–5pm",
+      "site": "WaverleyLife.ca",
+      "incentives": [
+        "1-Month Free Rent on a 12-Month Lease",
+        "Complimentary In-Suite Wi-Fi"
+      ],
+      "lifestyle": "Ideal for post-secondary student living & young professionals. Steps from University of Toronto.",
+      "floorplans": [
+        {
+          "type": "Studio",
+          "name": "Peterson",
+          "sqft": 398,
+          "from": 2615,
+          "img": "assets/plans/waverley/peterson.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Sinclair II",
+          "sqft": 421,
+          "from": 2740,
+          "img": "assets/plans/waverley/sinclair-ii.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Sinclair",
+          "sqft": 429,
+          "from": 2715,
+          "img": "assets/plans/waverley/sinclair.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Arden",
+          "sqft": 442,
+          "from": 2640,
+          "img": "assets/plans/waverley/arden.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Helm II",
+          "sqft": 534,
+          "from": 3125,
+          "img": "assets/plans/waverley/helm-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Helm III",
+          "sqft": 539,
+          "from": 3125,
+          "img": "assets/plans/waverley/helm-iii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Helm",
+          "sqft": 542,
+          "from": 3125,
+          "img": "assets/plans/waverley/helm.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Helm IV",
+          "sqft": 545,
+          "from": 3125,
+          "img": "assets/plans/waverley/helm-iv.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Millan III",
+          "sqft": 600,
+          "from": 3225,
+          "img": "assets/plans/waverley/millan-iii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Millan",
+          "sqft": 651,
+          "from": 3275,
+          "img": "assets/plans/waverley/millan.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Millan II",
+          "sqft": 654,
+          "from": 3200,
+          "img": "assets/plans/waverley/millan-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Robertson",
+          "sqft": 720,
+          "from": 3400,
+          "img": "assets/plans/waverley/robertson.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Lightfoot II",
+          "sqft": 762,
+          "from": 4200,
+          "img": "assets/plans/waverley/lightfoot-ii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Lightfoot",
+          "sqft": 774,
+          "from": 4575,
+          "img": "assets/plans/waverley/lightfoot.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Maida II",
+          "sqft": 774,
+          "from": 4650,
+          "img": "assets/plans/waverley/maida-ii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Maida",
+          "sqft": 815,
+          "from": 4750,
+          "img": "assets/plans/waverley/maida.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Lightfoot III",
+          "sqft": 869,
+          "from": 4575,
+          "img": "assets/plans/waverley/lightfoot-iii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Cohen",
+          "sqft": 1086,
+          "from": 5225,
+          "img": "assets/plans/waverley/cohen.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Lightfoot IV",
+          "sqft": 1392,
+          "from": 5100,
+          "img": "assets/plans/waverley/lightfoot-iv.webp"
+        },
+        {
+          "type": "3-Bed",
+          "name": "Feist",
+          "sqft": 1016,
+          "from": 5900,
+          "img": "assets/plans/waverley/feist.webp"
+        },
+        {
+          "type": "3-Bed",
+          "name": "Morissette",
+          "sqft": 1035,
+          "from": 6025,
+          "img": "assets/plans/waverley/morissette.webp"
+        },
+        {
+          "type": "3-Bed",
+          "name": "DeMarco",
+          "sqft": 1172,
+          "from": 5950,
+          "img": "assets/plans/waverley/demarco.webp"
+        },
+        {
+          "type": "3-Bed",
+          "name": "Lavigne",
+          "sqft": 1321,
+          "from": 6200
+        },
+        {
+          "type": "3-Bed",
+          "name": "Twain",
+          "sqft": 1321,
+          "from": 6350,
+          "img": "assets/plans/waverley/twain.webp"
+        }
+      ],
+      "amenities": [
+        "24/7 Official Hammer Strength® Training Facility with Wellness Vending Machine",
+        "Yoga & Spin Studio",
+        "Co-Working Space",
+        "Screening Room",
+        "Signature Rooftop Infinity Pool & Terrace",
+        "Lounge Terrace with BBQs",
+        "Rooftop Beehive",
+        "Pet Spa with Grooming Area",
+        "Virtual Cleveland Clinic Room",
+        "Free 5G Rogers Wi-Fi in Amenity Spaces",
+        "24-Hour Concierge",
+        "Lobby Lounge Featuring 10 DEAN Café & Bar",
+        "Automated Parcel System",
+        "Storage Lockers*",
+        "Electric Car Charging Stations*",
+        "Secured Underground Bicycle Storage*",
+        "Underground Resident & Visitor Parking*",
+        "Bicycle Repair Stand & Air Pump"
+      ],
+      "features": [
+        "In-Suite Full-Size Washer & Dryer",
+        "Stainless-Steel KitchenAid® Appliances",
+        "Panelled Dishwasher",
+        "Quartz Countertops & Slab Backsplash",
+        "Kitchen Islands*",
+        "Wine Refrigerators*",
+        "Mudroom Bench & Custom Millwork",
+        "LED & Undercabinet Lighting",
+        "Designer Plumbing Fixtures",
+        "Porcelain Tile Bathroom Flooring",
+        "Wall-Mounted Medicine Cabinets & Shower Niches*",
+        "Luxury Vinyl Tile Flooring",
+        "Custom Window Coverings",
+        "Blackout Blinds in Bedrooms",
+        "Upgraded Closet Organizers & Shelving",
+        "9' Smooth Ceilings",
+        "Wifi-Enabled NEST Thermostat",
+        "Keyless Smart Lock Entry",
+        "Pet Friendly",
+        "Furnished Options Available"
+      ]
+    },
+    {
+      "id": "parker",
+      "name": "Parker",
+      "brand": "Fitzrovia",
+      "location": "Yonge & Eglinton",
+      "area": "Midtown Toronto",
+      "units": 349,
+      "range": "$2,070–$3,720",
+      "types": "Studios – 3 Bed",
+      "rentsFrom": 2020,
+      "leasingManager": "Minnie Luangkham",
+      "email": "parkerleasing@fitzrovia.ca",
+      "realtorLine": "647-724-1323",
+      "hours": "Mon–Fri 9am–7pm | Sat–Sun 10am–5pm",
+      "site": "ParkerLife.ca",
+      "incentives": [
+        "Up to 2 Months Free Rent",
+        "Complimentary In-Suite Wi-Fi"
+      ],
+      "lifestyle": "Steps from Eglinton Station & the new Crosstown LRT. Ideal for first-time renters, young professionals or growing households.",
+      "floorplans": [
+        {
+          "type": "Studio",
+          "name": "Primrose",
+          "sqft": 350,
+          "from": 2070,
+          "img": "assets/plans/parker/primrose.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Primrose II",
+          "sqft": 392,
+          "from": 2285,
+          "img": "assets/plans/parker/primrose-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Greenwich",
+          "sqft": 457,
+          "from": 2450,
+          "img": "assets/plans/parker/greenwich.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Holland",
+          "sqft": 494,
+          "from": 2350,
+          "img": "assets/plans/parker/holland.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Battersea",
+          "sqft": 509,
+          "from": 2275,
+          "img": "assets/plans/parker/battersea.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Holland II",
+          "sqft": 547,
+          "from": 2300,
+          "img": "assets/plans/parker/holland-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Holland III",
+          "sqft": 552,
+          "from": 2425,
+          "img": "assets/plans/parker/holland-iii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Battersea II",
+          "sqft": 567,
+          "from": 2650,
+          "img": "assets/plans/parker/battersea-ii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Richmond",
+          "sqft": 726,
+          "from": 3075,
+          "img": "assets/plans/parker/richmond.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Richmond II",
+          "sqft": 745,
+          "from": 3200,
+          "img": "assets/plans/parker/richmond-ii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Regent",
+          "sqft": 746,
+          "from": 3615,
+          "img": "assets/plans/parker/regent.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Richmond III",
+          "sqft": 784,
+          "from": 3200,
+          "img": "assets/plans/parker/richmond-iii.webp"
+        },
+        {
+          "type": "3-Bed",
+          "name": "Hampstead",
+          "sqft": 886,
+          "from": 3720,
+          "img": "assets/plans/parker/hampstead.webp"
+        }
+      ],
+      "amenities": [
+        "24/7 Official Hammer Strength® Training Facility with Wellness Vending Machine",
+        "Yoga & Spin Studio",
+        "Kids Adventure Zone",
+        "Bowling Alley & Arcade",
+        "Sky Lounge",
+        "Entertainment Kitchen",
+        "Signature Rooftop Infinity Pool & Terrace",
+        "Lounge Terrace with BBQs",
+        "Private Dog Run",
+        "Pet Spa with Grooming Area",
+        "Virtual Cleveland Clinic Room",
+        "Free 5G Rogers Wi-Fi in Amenity Spaces",
+        "24-Hour Concierge",
+        "Lobby Lounge Featuring 10 DEAN Café & Bar",
+        "Automated Parcel System",
+        "BMW X1 Car Share*",
+        "Storage Lockers*",
+        "Electric Car Charging Stations*",
+        "Secured Underground Bicycle Storage*",
+        "Underground Resident & Visitor Parking*"
+      ],
+      "features": [
+        "In-Suite Full-Size Washer & Dryer",
+        "Stainless-Steel KitchenAid® Appliances",
+        "Panelled Dishwasher",
+        "Quartz Countertops & Slab Backsplash",
+        "Kitchen Islands*",
+        "Wine Refrigerators*",
+        "Mudroom Bench & Custom Millwork",
+        "LED & Undercabinet Lighting",
+        "Designer Plumbing Fixtures",
+        "Porcelain Tile Bathroom Flooring",
+        "Wall-Mounted Medicine Cabinets & Shower Niches*",
+        "Luxury Vinyl Tile Flooring",
+        "Custom Window Coverings",
+        "Blackout Blinds in Bedrooms",
+        "Upgraded Closet Organizers & Shelving",
+        "9' Smooth Ceilings",
+        "Wifi-Enabled NEST Thermostat",
+        "Keyless Smart Lock Entry",
+        "Pet Friendly",
+        "Furnished Options Available"
+      ]
+    },
+    {
+      "id": "elm-ledbury",
+      "name": "Elm-Ledbury",
+      "brand": "Fitzrovia",
+      "location": "Queen & Church",
+      "area": "Downtown Toronto — Historic Garden District",
+      "units": 542,
+      "range": "$2,400–$5,140",
+      "types": "Studios – 3 Bed",
+      "rentsFrom": 2300,
+      "leasingManager": "Kim Yun",
+      "email": "elmledburyleasing@fitzrovia.ca",
+      "realtorLine": "647-930-0512",
+      "hours": "Mon–Fri 9am–7pm | Sat–Sun 10am–5pm",
+      "site": "ElmLedbury.ca",
+      "incentives": [
+        "Up to 2 Months Free Rent",
+        "$250 10 DEAN Gift Card",
+        "Complimentary In-Suite Wi-Fi"
+      ],
+      "lifestyle": "Close to TMU, George Brown and the Financial District. Ideal for post-secondary students, professionals & young families.",
+      "floorplans": [
+        {
+          "type": "Studio",
+          "name": "Pixel",
+          "sqft": 360,
+          "from": 2400,
+          "img": "assets/plans/elm-ledbury/ledbury-bb-pixel.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Ambient",
+          "sqft": 397,
+          "from": 2490,
+          "img": "assets/plans/elm-ledbury/ledbury-bj-ambient.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Ambient IV",
+          "sqft": 397,
+          "from": 2575,
+          "img": "assets/plans/elm-ledbury/ledbury-bc-ambientiv.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Ambient II",
+          "sqft": 397,
+          "from": 2550,
+          "img": "assets/plans/elm-ledbury/ledbury-bh-ambientii.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Ambient IV",
+          "sqft": 410,
+          "from": 2490,
+          "img": "assets/plans/elm-ledbury/ledbury-bc-ambientiv.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Ambient III",
+          "sqft": 416,
+          "from": 2550,
+          "img": "assets/plans/elm-ledbury/ledbury-bd-ambientiii.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Brunswick",
+          "sqft": 449,
+          "from": 2800,
+          "img": "assets/plans/elm-ledbury/brunswick.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Vibrance IV",
+          "sqft": 451,
+          "from": 2490,
+          "img": "assets/plans/elm-ledbury/ledbury-ba-vibranceiv.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Vibrance",
+          "sqft": 454,
+          "from": 2450,
+          "img": "assets/plans/elm-ledbury/ledbury-bg-vibrance.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Vibrance II",
+          "sqft": 454,
+          "from": 2525,
+          "img": "assets/plans/elm-ledbury/ledbury-bf-vibranceii.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Vibrance III",
+          "sqft": 564,
+          "from": 2500,
+          "img": "assets/plans/elm-ledbury/ledbury-be-vibranceiii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Kelvin",
+          "sqft": 540,
+          "from": 2825,
+          "img": "assets/plans/elm-ledbury/ledbury-1b-kelvin.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Lavender",
+          "sqft": 559,
+          "from": 2875,
+          "img": "assets/plans/elm-ledbury/elm-1c-lavender.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Portrait",
+          "sqft": 594,
+          "from": 3150,
+          "img": "assets/plans/elm-ledbury/ledbury-1l-portrait.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Rowan",
+          "sqft": 655,
+          "from": 3400,
+          "img": "assets/plans/elm-ledbury/elm-1j-rowan.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Prime",
+          "sqft": 662,
+          "from": 3425,
+          "img": "assets/plans/elm-ledbury/ledbury-1p-prime.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Glass",
+          "sqft": 705,
+          "from": 3775,
+          "img": "assets/plans/elm-ledbury/ledbury-2v-glass.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Lens",
+          "sqft": 797,
+          "from": 3825,
+          "img": "assets/plans/elm-ledbury/ledbury-2u-lens.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Glass II",
+          "sqft": 809,
+          "from": 4165,
+          "img": "assets/plans/elm-ledbury/ledbury-2i-glassii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Hibiscus",
+          "sqft": 816,
+          "from": 3850,
+          "img": "assets/plans/elm-ledbury/elm-2e-hibiscus.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Panorama",
+          "sqft": 850,
+          "from": 4165,
+          "img": "assets/plans/elm-ledbury/ledbury-2s-panorama.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Alder",
+          "sqft": 858,
+          "from": 4175,
+          "img": "assets/plans/elm-ledbury/elm-2s-alder.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Panorama II",
+          "sqft": 892,
+          "from": 4025,
+          "img": "assets/plans/elm-ledbury/ledbury-2w-panoramaii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Linden",
+          "sqft": 954,
+          "from": 4450,
+          "img": "assets/plans/elm-ledbury/elm-2t-linden.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Flash",
+          "sqft": 974,
+          "from": 3650,
+          "img": "assets/plans/elm-ledbury/ledbury-2t-flash.webp"
+        },
+        {
+          "type": "3-Bed",
+          "name": "Reflector",
+          "sqft": 1024,
+          "from": 4550,
+          "img": "assets/plans/elm-ledbury/ledbury-3d-reflector.webp"
+        },
+        {
+          "type": "3-Bed",
+          "name": "Sage",
+          "sqft": 1065,
+          "from": 4990
+        },
+        {
+          "type": "3-Bed",
+          "name": "Cedar",
+          "sqft": 1102,
+          "from": 5315,
+          "img": "assets/plans/elm-ledbury/elm-3f-cedar.webp"
+        },
+        {
+          "type": "3-Bed",
+          "name": "Magnolia",
+          "sqft": 1157,
+          "from": 5140,
+          "img": "assets/plans/elm-ledbury/elm-3d-magnolia.webp"
+        }
+      ],
+      "amenities": [
+        "24/7 Official Hammer Strength® Training Facility with Wellness Vending Machine",
+        "Reformer Pilates & Yoga Studio",
+        "Peloton Spin Studio",
+        "Basketball Court",
+        "Ski & Snowboard Simulator",
+        "Sports & Games Lounge with F1 Simulator & Arcade Games",
+        "Co-Working Spaces",
+        "Screening Room",
+        "Signature Rooftop Infinity Pool & Terrace",
+        "Signature Terrace with Pizza Oven",
+        "Battersea Bridge & Lounge with Wine Dispenser",
+        "Sky Lounge & Entertainment Kitchen",
+        "Skyline Dog Run",
+        "Self Serve Pet Spa",
+        "Virtual Cleveland Clinic Room",
+        "Free 5G Rogers Wi-Fi in Amenity Spaces",
+        "24-Hour Concierge",
+        "Lobby Lounge",
+        "Automated Parcel System",
+        "Bloomsbury Academy",
+        "10DEAN Café & Bar",
+        "Storage Lockers*",
+        "Electric Car Charging Stations*",
+        "Secured Underground Bicycle Storage*",
+        "Underground Resident & Visitor Parking*",
+        "Bicycle Repair Stand & Air Pump"
+      ],
+      "features": [
+        "In-Suite Full-Size Washer & Dryer",
+        "Stainless-Steel KitchenAid® Appliances",
+        "Panelled Dishwasher",
+        "Quartz Countertops & Full-Height Backsplash",
+        "Kitchen Islands with Seating for up to 6*",
+        "Wine Refrigerators*",
+        "Mudroom Bench & Custom Millwork",
+        "LED & Undercabinet Lighting",
+        "Double Vanities*",
+        "Designer Plumbing Fixtures",
+        "Porcelain Tile Bathroom Flooring",
+        "Wall-Mounted Medicine Cabinets & Shower Niches*",
+        "Luxury Vinyl Tile Flooring",
+        "Custom Window Coverings",
+        "Blackout Blinds in Bedrooms",
+        "Upgraded Closet Organizers & Shelving",
+        "9' Smooth Ceilings",
+        "Wi-Fi Enabled NEST Thermostat",
+        "Keyless Smart Lock Entry",
+        "Pet Friendly",
+        "Furnished Options Available"
+      ]
+    },
+    {
+      "id": "sloane-south",
+      "name": "Sloane — South Tower",
+      "brand": "Fitzrovia",
+      "location": "Dufferin & 401",
+      "area": "North York — steps from Yorkdale Mall",
+      "units": 241,
+      "types": "Studios – 3 Bed + Townhomes",
+      "rentsFrom": 2100,
+      "leasingManager": "Joe Scofano",
+      "email": "sloaneleasing@fitzrovia.ca",
+      "realtorLine": "647-496-6044",
+      "hours": "Mon–Fri 9am–7pm | Sat–Sun 10am–5pm",
+      "site": "SloaneLife.ca",
+      "incentives": [
+        "Up to 2 Months Free Rent",
+        "6 Months Complimentary Parking",
+        "$100 10DEAN Gift Card",
+        "$200 Presto Gift Card",
+        "1 Year Costco Membership",
+        "Complimentary In-Suite Wi-Fi"
+      ],
+      "floorplans": [
+        {
+          "type": "Studio",
+          "name": "Brocade",
+          "sqft": 357,
+          "from": 2200,
+          "img": "assets/plans/sloane/brocade.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Brocade II",
+          "sqft": 357,
+          "from": 2325,
+          "img": "assets/plans/sloane/brocade-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Floral II",
+          "sqft": 493,
+          "from": 2755,
+          "img": "assets/plans/sloane/floral-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Argyle IV",
+          "sqft": 504,
+          "from": 2630,
+          "img": "assets/plans/sloane/argyle-iv.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Argyle III",
+          "sqft": 508,
+          "from": 2780,
+          "img": "assets/plans/sloane/argyle-iii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Floral",
+          "sqft": 514,
+          "from": 2580,
+          "img": "assets/plans/sloane/floral.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Polka Dot III",
+          "sqft": 514,
+          "from": 2830,
+          "img": "assets/plans/sloane/polkadot-iii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Argyle II",
+          "sqft": 532,
+          "from": 2770,
+          "img": "assets/plans/sloane/argyle-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Argyle",
+          "sqft": 537,
+          "from": 3005,
+          "img": "assets/plans/sloane/argyle.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Polka Dot II",
+          "sqft": 573,
+          "from": 3130,
+          "img": "assets/plans/sloane/polkadot-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Polka Dot",
+          "sqft": 658,
+          "from": 3130,
+          "img": "assets/plans/sloane/polkadot.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Argyle V",
+          "sqft": 683,
+          "from": 2730,
+          "img": "assets/plans/sloane/argyle-v.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Toile II",
+          "sqft": 721,
+          "from": 3295,
+          "img": "assets/plans/sloane/toile-ii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Plaid",
+          "sqft": 773,
+          "from": 3345,
+          "img": "assets/plans/sloane/plaid.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Plaid II",
+          "sqft": 773,
+          "from": 3295,
+          "img": "assets/plans/sloane/plaid-ii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Toile",
+          "sqft": 777,
+          "from": 3220,
+          "img": "assets/plans/sloane/toile.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Houndstooth",
+          "sqft": 812,
+          "from": 3670,
+          "img": "assets/plans/sloane/houndstooth.webp"
+        },
+        {
+          "type": "2-Bed TH",
+          "name": "Tartan",
+          "sqft": 1100,
+          "from": 4470,
+          "img": "assets/plans/sloane/tartan.webp"
+        },
+        {
+          "type": "2-Bed TH",
+          "name": "Tartan II",
+          "sqft": 1196,
+          "from": 4470,
+          "img": "assets/plans/sloane/tartan-ii.webp"
+        },
+        {
+          "type": "3-Bed",
+          "name": "Paisley",
+          "sqft": 851,
+          "from": 3570,
+          "img": "assets/plans/sloane/paisley.webp"
+        },
+        {
+          "type": "3-Bed",
+          "name": "Paisley IV",
+          "sqft": 866,
+          "from": 3895,
+          "img": "assets/plans/sloane/paisley-iv.webp"
+        },
+        {
+          "type": "3-Bed",
+          "name": "Herringbone",
+          "sqft": 898,
+          "from": 4170,
+          "img": "assets/plans/sloane/herringbone.webp"
+        },
+        {
+          "type": "3-Bed",
+          "name": "Paisley II",
+          "sqft": 991,
+          "from": 3845,
+          "img": "assets/plans/sloane/paisley-ii.webp"
+        },
+        {
+          "type": "3-Bed",
+          "name": "Paisley III",
+          "sqft": 994,
+          "from": 3820,
+          "img": "assets/plans/sloane/paisley-iii.webp"
+        },
+        {
+          "type": "3-Bed TH",
+          "name": "Rococo",
+          "sqft": 1469,
+          "from": 5145,
+          "img": "assets/plans/sloane/rococo.webp"
+        }
+      ],
+      "amenities": [
+        "24/7 Fitness Centre",
+        "Yoga Studio",
+        "Kids Room",
+        "Games Room",
+        "Co-Working Space",
+        "Party Room",
+        "Lounge Terrace with BBQs",
+        "Private Dog Run",
+        "Pet Spa with Grooming Stations",
+        "Virtual Cleveland Clinic Room",
+        "Free 5G Rogers Wi-Fi in Amenity Spaces",
+        "24-Hour Concierge",
+        "Lobby Lounge",
+        "Automated Parcel System",
+        "Storage Lockers*",
+        "Electric Car Charging Stations*",
+        "Secured Underground Bicycle Storage*",
+        "Underground Resident & Visitor Parking*"
+      ],
+      "features": [
+        "In-Suite Full-Size Washer & Dryer",
+        "Stainless-Steel Whirlpool® Appliances",
+        "Full-Sized Panelled Dishwasher",
+        "Quartz Countertops & Slab Backsplash",
+        "Kitchen Islands*",
+        "Wine Refrigerators*",
+        "Soft-Close Hinges",
+        "Two-Toned Kitchen Cabinetry",
+        "Custom Island Pendant Lighting",
+        "LED & Undercabinet Lighting",
+        "Wall-Mounted Medicine Cabinets & Shower Niches*",
+        "Custom Vanities with Quartz Countertops",
+        "Matte Black Plumbing Fixtures",
+        "Soaker Tub*",
+        "Ceramic Shower Wall Tile",
+        "Porcelain Tile Flooring",
+        "Custom Window Coverings",
+        "Blackout Blinds in Bedrooms",
+        "Upgraded Closet Organizers & Shelving",
+        "9' Smooth Ceilings",
+        "Wifi-Enabled Ecobee Smart Thermostat",
+        "Keyless Smart Lock Entry",
+        "Pet Friendly",
+        "Furnished Options Available"
+      ]
+    },
+    {
+      "id": "sloane-west-east",
+      "name": "Sloane — West & East Towers",
+      "brand": "Fitzrovia",
+      "location": "Dufferin & 401",
+      "area": "North York — steps from Yorkdale Mall",
+      "units": 239,
+      "types": "Studios – 3 Bed + Townhomes",
+      "rentsFrom": 2725,
+      "leasingManager": "Joe Scofano",
+      "email": "sloaneleasing@fitzrovia.ca",
+      "realtorLine": "647-496-6044",
+      "hours": "Mon–Fri 9am–7pm | Sat–Sun 10am–5pm",
+      "site": "SloaneLife.ca",
+      "incentives": [
+        "Up to 2 Months Free Rent",
+        "6 Months Complimentary Parking",
+        "$100 10DEAN Gift Card",
+        "$200 Presto Gift Card",
+        "1 Year Costco Membership",
+        "Complimentary In-Suite Wi-Fi"
+      ],
+      "floorplans": [
+        {
+          "type": "1-Bed",
+          "name": "Suede",
+          "sqft": 539,
+          "from": 2975,
+          "img": "assets/plans/sloane/suede.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Suede IV",
+          "sqft": 540,
+          "from": 2975,
+          "img": "assets/plans/sloane/suede-iv.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Velvet III",
+          "sqft": 576,
+          "from": 3090,
+          "img": "assets/plans/sloane/velvet-iii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Velvet V",
+          "sqft": 576,
+          "from": 3090,
+          "img": "assets/plans/sloane/velvet-v.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Dover II",
+          "sqft": 576,
+          "from": 3215,
+          "img": "assets/plans/sloane/sloane-berkeley-dover-ii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Silk",
+          "sqft": 760,
+          "from": 3645,
+          "img": "assets/plans/sloane/silk.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Silk III",
+          "sqft": 766,
+          "from": 3735,
+          "img": "assets/plans/sloane/silk-iii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Lace IV",
+          "sqft": 802,
+          "from": 3845,
+          "img": "assets/plans/sloane/lace-iv.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Lace III",
+          "sqft": 816,
+          "from": 3845,
+          "img": "assets/plans/sloane/lace-iii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Lace",
+          "sqft": 835,
+          "from": 3860,
+          "img": "assets/plans/sloane/lace.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Lace II",
+          "sqft": 835,
+          "from": 3985,
+          "img": "assets/plans/sloane/lace-ii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Linen",
+          "sqft": 865,
+          "from": 3870,
+          "img": "assets/plans/sloane/linen.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Malham",
+          "sqft": 889,
+          "from": 4210,
+          "img": "assets/plans/sloane/sloane-berkeley-malham.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Leather",
+          "sqft": 889,
+          "from": 4035,
+          "img": "assets/plans/sloane/leather.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Leather II",
+          "sqft": 889,
+          "from": 4560,
+          "img": "assets/plans/sloane/leather-ii.webp"
+        },
+        {
+          "type": "2-Bed TH",
+          "name": "Wexford IV",
+          "sqft": 1210,
+          "from": 7260,
+          "img": "assets/plans/sloane/sloane-berkeley-wexford-iv.webp"
+        },
+        {
+          "type": "3-Bed",
+          "name": "Cashmere",
+          "sqft": 973,
+          "from": 4085,
+          "img": "assets/plans/sloane/cashmere.webp"
+        },
+        {
+          "type": "3-Bed",
+          "name": "Trafalgar",
+          "sqft": 973,
+          "from": 4560,
+          "img": "assets/plans/sloane/sloane-berkeley-trafalgar.webp"
+        },
+        {
+          "type": "3-Bed TH",
+          "name": "Wexford",
+          "sqft": 1245,
+          "from": 7260,
+          "img": "assets/plans/sloane/sloane-berkeley-wexford-i.webp"
+        }
+      ],
+      "amenities": [
+        "24/7 Official Hammer Strength® Training Facility with Wellness Vending Machine",
+        "Reformer Pilates & Yoga Studio",
+        "Peloton Spin Studio",
+        "Full Sized Basketball Court",
+        "Multi Sport Simulator",
+        "Full Sized Two-Lane Bowling Alley",
+        "Co-Working Spaces",
+        "Multiple Screening Rooms",
+        "Signature Terrace & Infinity Pool",
+        "Signature Terrace with Pizza Oven",
+        "Clubhouse Lounge & Entertainment Kitchen",
+        "Karaoke Room",
+        "Kids Adventure Zone",
+        "Maker's Space",
+        "Private Dog Run",
+        "Self Serve Pet Spa",
+        "Virtual Cleveland Clinic Room",
+        "Free 5G Rogers Wi-Fi in Amenity Spaces",
+        "24-Hour Concierge",
+        "Lobby Lounge",
+        "Automated Parcel System",
+        "Public Daycare",
+        "Bloomsbury Academy",
+        "10DEAN Café & Bar",
+        "Storage Lockers*",
+        "Electric Car Charging Stations*",
+        "Secured Underground Bicycle Storage*",
+        "Underground Resident & Visitor Parking*",
+        "Bicycle Repair Stand & Air Pump"
+      ],
+      "features": [
+        "In-Suite Full-Size Washer & Dryer",
+        "Stainless-Steel KitchenAid® Appliances",
+        "Panelled Dishwasher",
+        "Quartz Countertops & Full-Height Backsplash",
+        "Kitchen Islands with Seating for up to 6*",
+        "Soft-Close Hinges",
+        "Two-Toned Kitchen Cabinetry",
+        "Custom Island Pendant Lighting",
+        "Wine Refrigerators*",
+        "Mudroom Bench & Custom Millwork",
+        "LED & Undercabinet Lighting",
+        "Double Vanities*",
+        "Designer Plumbing Fixtures",
+        "Porcelain Tile Bathroom Flooring",
+        "Wall-Mounted Medicine Cabinets & Shower Niches*",
+        "Soaker Tub*",
+        "Hand-Laid Mosaic Tile",
+        "Luxury Vinyl Tile Flooring",
+        "Laundry Room Sinks*",
+        "Custom Window Coverings",
+        "Blackout Blinds in Bedrooms",
+        "Upgraded Closet Organizers & Shelving",
+        "9' Smooth Ceilings",
+        "Wi-Fi Enabled Ecobee Thermostat",
+        "Keyless Smart Lock Entry",
+        "Pet Friendly",
+        "Furnished Options Available"
+      ]
+    },
+    {
+      "id": "maddox-cabbagetown",
+      "name": "Maddox Cabbagetown",
+      "brand": "Maddox",
+      "location": "Shuter & Sherbourne",
+      "area": "South Cabbagetown — steps from CF Eaton Centre",
+      "units": 596,
+      "range": "$2,095–$3,045",
+      "types": "1 – 2 Bed",
+      "rentsFrom": 1995,
+      "leasingManager": "Stella Gomes",
+      "email": "cabbagetownleasing@maddox.ca",
+      "realtorLine": "289-907-0173",
+      "hours": "Mon–Fri 9am–7pm | Sat–Sun 10am–5pm",
+      "site": "Maddox.ca",
+      "incentives": [
+        "1-Month Free on a 12-Month Lease",
+        "Complimentary In-Suite Wi-Fi"
+      ],
+      "floorplans": [
+        {
+          "type": "1-Bed",
+          "name": "Freesia",
+          "sqft": 502,
+          "from": 2095,
+          "img": "assets/plans/maddox-cabbagetown/freesia.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Rose",
+          "sqft": 514,
+          "from": 2070,
+          "img": "assets/plans/maddox-cabbagetown/rose.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Jasmine II",
+          "sqft": 515,
+          "from": 2095,
+          "img": "assets/plans/maddox-cabbagetown/jasmin-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Jasmine III",
+          "sqft": 516,
+          "from": 2095,
+          "img": "assets/plans/maddox-cabbagetown/jasmin-iii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Peony",
+          "sqft": 524,
+          "from": 2145,
+          "img": "assets/plans/maddox-cabbagetown/peony.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Peony II",
+          "sqft": 524,
+          "from": 2120,
+          "img": "assets/plans/maddox-cabbagetown/peony-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Jade",
+          "sqft": 529,
+          "from": 1995,
+          "img": "assets/plans/maddox-cabbagetown/jade.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Jasmine",
+          "sqft": 540,
+          "from": 2195,
+          "img": "assets/plans/maddox-cabbagetown/jasmin.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Peony III",
+          "sqft": 565,
+          "from": 2145,
+          "img": "assets/plans/maddox-cabbagetown/peony-iii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Sunflower",
+          "sqft": 571,
+          "from": 2170,
+          "img": "assets/plans/maddox-cabbagetown/sunflower.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Sunflower II",
+          "sqft": 571,
+          "from": 2170,
+          "img": "assets/plans/maddox-cabbagetown/sunflower-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Bonsai",
+          "sqft": 586,
+          "from": 2245,
+          "img": "assets/plans/maddox-cabbagetown/bonsai.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Orchid",
+          "sqft": 587,
+          "from": 2195,
+          "img": "assets/plans/maddox-cabbagetown/orchid.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Orchid II",
+          "sqft": 587,
+          "from": 2295,
+          "img": "assets/plans/maddox-cabbagetown/orchid-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Iris II",
+          "sqft": 588,
+          "from": 2195,
+          "img": "assets/plans/maddox-cabbagetown/iris-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Lily II",
+          "sqft": 636,
+          "from": 2165,
+          "img": "assets/plans/maddox-cabbagetown/lily-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Lily",
+          "sqft": 638,
+          "from": 2225,
+          "img": "assets/plans/maddox-cabbagetown/lily.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Iris",
+          "sqft": 673,
+          "from": 2270,
+          "img": "assets/plans/maddox-cabbagetown/iris.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Cactus",
+          "sqft": 553,
+          "from": 2170,
+          "img": "assets/plans/maddox-cabbagetown/cactus.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Cactus II",
+          "sqft": 553,
+          "from": 2220,
+          "img": "assets/plans/maddox-cabbagetown/cactus-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Yucca II",
+          "sqft": 583,
+          "from": 2195,
+          "img": "assets/plans/maddox-cabbagetown/yucca-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Yucca",
+          "sqft": 585,
+          "from": 2045,
+          "img": "assets/plans/maddox-cabbagetown/yucca.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Ivy",
+          "sqft": 639,
+          "from": 2220,
+          "img": "assets/plans/maddox-cabbagetown/ivy.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Ivy II",
+          "sqft": 640,
+          "from": 2320,
+          "img": "assets/plans/maddox-cabbagetown/ivy-ii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Fern",
+          "sqft": 795,
+          "from": 2870,
+          "img": "assets/plans/maddox-cabbagetown/fern.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Fern II",
+          "sqft": 795,
+          "from": 2720,
+          "img": "assets/plans/maddox-cabbagetown/fern-ii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Aloe",
+          "sqft": 813,
+          "from": 2845,
+          "img": "assets/plans/maddox-cabbagetown/aloe.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Aloe II",
+          "sqft": 813,
+          "from": 3020,
+          "img": "assets/plans/maddox-cabbagetown/aloe-ii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Dahlia",
+          "sqft": 845,
+          "from": 3045,
+          "img": "assets/plans/maddox-cabbagetown/dahlia.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Dahlia II",
+          "sqft": 845,
+          "from": 3045,
+          "img": "assets/plans/maddox-cabbagetown/dahlia-ii.webp"
+        }
+      ],
+      "amenities": [
+        "Fitness Centre",
+        "Kids Playroom",
+        "Games Room",
+        "Craft Room",
+        "Entertainment Kitchen",
+        "Co-Working Lounge",
+        "Party Room",
+        "Pet Relief Area",
+        "Pet Spa with Grooming Station",
+        "Free 5G Rogers Wi-Fi in Amenity Spaces",
+        "24-Hour Concierge",
+        "Automated Parcel System",
+        "Storage Lockers",
+        "Underground Resident Parking*",
+        "Wheelchair Access",
+        "On-Site Management Team",
+        "On-Site Convenience Store",
+        "Elevators",
+        "Laundry & Lounge",
+        "No Smoking Allowed"
+      ],
+      "features": [
+        "Stainless Steel Appliances",
+        "Dishwasher",
+        "Cabinetry with Soft Close Hinges",
+        "Open Concept Kitchens*",
+        "Upgraded Lighting Fixtures",
+        "Porcelain Tile Bathroom Flooring",
+        "Luxury Vinyl Tile Flooring*",
+        "Custom Window Coverings",
+        "City and Waterfront Views",
+        "Private Balconies*",
+        "Air Conditioning",
+        "Spacious Floorplans",
+        "Keyless Smart Lock Entry",
+        "Pet Friendly",
+        "Furnished Options Available"
+      ]
+    },
+    {
+      "id": "maddox-tyndall",
+      "name": "Maddox Tyndall",
+      "brand": "Maddox",
+      "location": "King & Dufferin",
+      "area": "West Toronto — the heart of Liberty Village",
+      "units": 325,
+      "range": "$1,775–$2,920",
+      "types": "Studios – 2 Bed",
+      "rentsFrom": 1775,
+      "leasingManager": "Stella Gomes",
+      "email": "tyndallleasing@maddox.ca",
+      "realtorLine": "289-277-9481",
+      "hours": "Mon–Fri 9am–7pm | Sat–Sun 10am–5pm",
+      "site": "Maddox.ca",
+      "incentives": [
+        "1-Month Free on a 12-Month Lease",
+        "Complimentary In-Suite Wi-Fi"
+      ],
+      "floorplans": [
+        {
+          "type": "Studio",
+          "name": "Surfside",
+          "sqft": 386,
+          "from": 1875,
+          "img": "assets/plans/maddox-tyndall/surfside-east.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Surfside II",
+          "sqft": 386,
+          "from": 1775,
+          "img": "assets/plans/maddox-tyndall/surfside-ii-east.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Surfside III",
+          "sqft": 386,
+          "from": 1875,
+          "img": "assets/plans/maddox-tyndall/surfside-iii.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Batten",
+          "sqft": 417,
+          "from": 1925,
+          "img": "assets/plans/maddox-tyndall/batten.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Starboard",
+          "sqft": 417,
+          "from": 1940,
+          "img": "assets/plans/maddox-tyndall/starboard.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Tiller",
+          "sqft": 429,
+          "from": 2050,
+          "img": "assets/plans/maddox-tyndall/tiller.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Trysail",
+          "sqft": 429,
+          "from": 2050,
+          "img": "assets/plans/maddox-tyndall/trysail.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Windward",
+          "sqft": 435,
+          "from": 2050,
+          "img": "assets/plans/maddox-tyndall/windward.webp"
+        },
+        {
+          "type": "Studio",
+          "name": "Jibe",
+          "sqft": 451,
+          "from": 1950,
+          "img": "assets/plans/maddox-tyndall/jibe.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Coastal",
+          "sqft": 563,
+          "from": 2355,
+          "img": "assets/plans/maddox-tyndall/coastal.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Coastal II",
+          "sqft": 563,
+          "from": 2345,
+          "img": "assets/plans/maddox-tyndall/coastal-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Shore",
+          "sqft": 626,
+          "from": 2395,
+          "img": "assets/plans/maddox-tyndall/shore.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Shore II",
+          "sqft": 626,
+          "from": 2395,
+          "img": "assets/plans/maddox-tyndall/shore-ii.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Shore III",
+          "sqft": 626,
+          "from": 2245,
+          "img": "assets/plans/maddox-tyndall/shore-iii-west.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Shore IV",
+          "sqft": 626,
+          "from": 2245,
+          "img": "assets/plans/maddox-tyndall/shore-iv-west.webp"
+        },
+        {
+          "type": "1-Bed",
+          "name": "Sail",
+          "sqft": 719,
+          "from": 2520,
+          "img": "assets/plans/maddox-tyndall/sail.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Coral II",
+          "sqft": 722,
+          "from": 2820,
+          "img": "assets/plans/maddox-tyndall/coral-ii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Coral",
+          "sqft": 728,
+          "from": 2820,
+          "img": "assets/plans/maddox-tyndall/coral.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Coral IV",
+          "sqft": 729,
+          "from": 2830,
+          "img": "assets/plans/maddox-tyndall/coral-iv.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Coral III",
+          "sqft": 766,
+          "from": 2830,
+          "img": "assets/plans/maddox-tyndall/coral-iii.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Beacon",
+          "sqft": 799,
+          "from": 2920,
+          "img": "assets/plans/maddox-tyndall/beacon.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Port",
+          "sqft": 841,
+          "from": 2920,
+          "img": "assets/plans/maddox-tyndall/port.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Keel",
+          "sqft": 844,
+          "from": 2895,
+          "img": "assets/plans/maddox-tyndall/keel.webp"
+        },
+        {
+          "type": "2-Bed",
+          "name": "Leeward",
+          "sqft": 850,
+          "from": 2920,
+          "img": "assets/plans/maddox-tyndall/leeward.webp"
+        }
+      ],
+      "amenities": [
+        "Fitness Centre",
+        "Automated Parcel System",
+        "Storage Lockers",
+        "Underground & Outdoor Parking Options*",
+        "Wheelchair Access",
+        "On-Site Management Team",
+        "Elevators",
+        "Laundry & Lounge",
+        "No Smoking Allowed",
+        "Rapid Access to Public Transit",
+        "Shopping Nearby"
+      ],
+      "features": [
+        "Stainless Steel Appliances",
+        "Dishwasher",
+        "Cabinetry with Soft Close Hinges",
+        "Open Concept Kitchens*",
+        "Upgraded Lighting Fixtures",
+        "Porcelain Tile Bathroom Flooring",
+        "Luxury Vinyl Tile Flooring*",
+        "Custom Window Coverings",
+        "City and Waterfront Views",
+        "Private Balconies*",
+        "Spacious Floorplans",
+        "Keyless Smart Lock Entry",
+        "Pet Friendly",
+        "Furnished Options Available"
+      ]
+    },
+    {
+      "id": "rushden-station",
+      "name": "Rushden Station",
+      "brand": "Fitzrovia",
+      "location": "Main & Danforth",
+      "area": "East Toronto",
+      "status": "Coming Q3 2026",
+      "floorplans": []
+    }
+  ]
+}
