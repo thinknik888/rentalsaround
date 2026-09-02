@@ -193,3 +193,21 @@ footer{background:#111;padding:36px clamp(20px,4vw,48px);display:flex;justify-co
 .card--photo .card-meta,.card--photo .card-count{padding:0 24px}
 .card--photo .card-price{padding:14px 24px 22px;margin-top:8px}
 .card--photo .badge{position:absolute;top:14px;left:14px;background:var(--cream);z-index:2;margin:0}
+
+/* ---------- the search ---------- */
+.filterset{border:1px solid var(--border);background:var(--cream-dark);padding:22px 24px;margin-bottom:28px}
+.filterrow{display:flex;align-items:flex-start;gap:16px;padding:10px 0;border-bottom:1px solid var(--border)}
+.filterrow:last-of-type{border-bottom:0}
+.filterlabel{flex:0 0 66px;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-muted);padding-top:13px}
+.filterset .filters{margin-bottom:0;flex:1}
+.filterset .filter-count{margin:14px 0 0;font-size:12px;color:var(--gold);letter-spacing:.04em;text-align:right}
+@media(max-width:620px){
+  .filterrow{flex-direction:column;gap:6px;padding:12px 0}
+  .filterlabel{padding-top:0}
+  .filterset{padding:16px 14px}
+  .chip{padding:9px 14px;font-size:9.5px}
+}
+/* area label on a search result */
+.fp-area{padding:14px 20px 0;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted)}
+.fp-area strong{color:var(--gold);font-weight:500}
+.fp-area + .fp-name{padding-top:2px}

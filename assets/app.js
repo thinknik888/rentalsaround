@@ -130,44 +130,49 @@
   }
 
   // ---------- floor plan filtering ----------
+  // Works for both the homepage search (area + size + budget) and a
+  // community page (size + budget). Any filter row that isn't on the page
+  // simply never narrows anything.
   function initFilters() {
-    var bar = $("#fpFilters");
-    if (!bar) return;
-    var priceBar = $("#fpPrice");
+    var rows = [
+      { el: $("#fArea"),      key: "area",  read: function (c) { return c.dataset.area; } },
+      { el: $("#fType") || $("#fpFilters"), key: "type", read: function (c) { return c.dataset.type; } },
+      { el: $("#fPrice") || $("#fpPrice"),  key: "price",
+        read: function (c) { return [Number(c.dataset.min), Number(c.dataset.max)]; } }
+    ].filter(function (r) { return r.el; });
+    if (!rows.length) return;
+
     var plans = $$(".fp");
-    var count = $("#fpCount");
-    var type = "all", min = 0, max = 99999;
+    var count = $("#fCount") || $("#fpCount");
+    var state = { area: "all", type: "all", price: [0, 99999] };
 
     function apply() {
       var shown = 0;
       plans.forEach(function (p) {
         var price = Number(p.dataset.from) || 0;
-        var ok = (type === "all" || p.dataset.type === type) && price >= min && price <= max;
+        var ok =
+          (state.area === "all" || p.dataset.area === state.area) &&
+          (state.type === "all" || (p.dataset.type || "").indexOf(state.type) === 0) &&
+          price >= state.price[0] && price <= state.price[1];
         p.hidden = !ok;
         if (ok) shown++;
       });
       if (count) {
         count.textContent = shown === 0
-          ? "Nothing in that range — try a wider budget"
-          : shown + (shown === 1 ? " suite" : " suites");
+          ? "Nothing matches — widen the budget or try another area"
+          : shown + (shown === 1 ? " suite" : " suites") + " match";
       }
     }
 
-    function wire(container, onPick) {
-      if (!container) return;
-      $$(".chip", container).forEach(function (chip) {
+    rows.forEach(function (row) {
+      $$(".chip", row.el).forEach(function (chip) {
         chip.addEventListener("click", function () {
-          $$(".chip", container).forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
+          $$(".chip", row.el).forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
           chip.setAttribute("aria-pressed", "true");
-          onPick(chip);
+          state[row.key] = row.read(chip);
           apply();
         });
       });
-    }
-
-    wire(bar, function (chip) { type = chip.dataset.type; });
-    wire(priceBar, function (chip) {
-      min = Number(chip.dataset.min); max = Number(chip.dataset.max);
     });
     apply();
   }

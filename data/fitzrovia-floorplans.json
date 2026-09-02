@@ -232,7 +232,9 @@
         "Keyless Smart Lock Entry",
         "Pet Friendly",
         "Furnished Options Available"
-      ]
+      ],
+      "area_name": "U of T",
+      "building": "Waverley"
     },
     {
       "id": "parker",
@@ -390,7 +392,9 @@
         "Keyless Smart Lock Entry",
         "Pet Friendly",
         "Furnished Options Available"
-      ]
+      ],
+      "area_name": "Yonge & Eglinton",
+      "building": "Parker"
     },
     {
       "id": "elm-ledbury",
@@ -667,7 +671,9 @@
         "Keyless Smart Lock Entry",
         "Pet Friendly",
         "Furnished Options Available"
-      ]
+      ],
+      "area_name": "Eaton Centre",
+      "building": "Elm-Ledbury"
     },
     {
       "id": "sloane-south",
@@ -913,7 +919,9 @@
         "Keyless Smart Lock Entry",
         "Pet Friendly",
         "Furnished Options Available"
-      ]
+      ],
+      "area_name": "Yorkdale",
+      "building": "Sloane — South Tower"
     },
     {
       "id": "sloane-west-east",
@@ -1131,7 +1139,9 @@
         "Keyless Smart Lock Entry",
         "Pet Friendly",
         "Furnished Options Available"
-      ]
+      ],
+      "area_name": "Yorkdale",
+      "building": "Sloane — West & East Towers"
     },
     {
       "id": "maddox-cabbagetown",
@@ -1402,7 +1412,9 @@
         "Keyless Smart Lock Entry",
         "Pet Friendly",
         "Furnished Options Available"
-      ]
+      ],
+      "area_name": "Cabbagetown",
+      "building": "Maddox Cabbagetown"
     },
     {
       "id": "maddox-tyndall",
@@ -1621,7 +1633,9 @@
         "Keyless Smart Lock Entry",
         "Pet Friendly",
         "Furnished Options Available"
-      ]
+      ],
+      "area_name": "Liberty Village",
+      "building": "Maddox Tyndall"
     },
     {
       "id": "rushden-station",
@@ -1630,7 +1644,9 @@
       "location": "Main & Danforth",
       "area": "East Toronto",
       "status": "Coming Q3 2026",
-      "floorplans": []
+      "floorplans": [],
+      "area_name": "Danforth",
+      "building": "Rushden Station"
     }
   ]
 }
