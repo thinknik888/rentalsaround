@@ -44,7 +44,7 @@
     if (opts.floorplan_name) {
       line.textContent = opts.floorplan_type + " · " + opts.floorplan_name +
         (opts.floorplan_sqft ? " · " + opts.floorplan_sqft + " sq ft" : "") +
-        (opts.floorplan_from ? " · from $" + Number(opts.floorplan_from).toLocaleString() + "/mo" : "");
+        (opts.floorplan_from ? " · from $" + Number(opts.floorplan_from).toLocaleString() + "*/mo" : "");
       line.hidden = false;
     } else {
       line.hidden = true;
@@ -239,7 +239,23 @@
         else { img.removeAttribute("src"); img.parentElement.hidden = true; }
         $("#planName").textContent = d.name;
         $("#planSpec").textContent = d.plantype + " · " + Number(d.sqft).toLocaleString() + " sq ft";
-        $("#planPrice").innerHTML = "$" + Number(d.from).toLocaleString() + "<small>/mo starting</small>";
+        $("#planPrice").innerHTML = "$" + Number(d.from).toLocaleString() +
+          '<sup class="ast" aria-hidden="true">*</sup><small>/mo starting</small>';
+
+        // link through to the building's own page (new tab), unless we are already on it
+        var cl = $("#planCommunity");
+        if (cl) {
+          var here   = (location.pathname.split("/").pop() || "index.html");
+          var target = (d.community || "") + ".html";
+          if (!d.community || target === here) {
+            cl.hidden = true;
+          } else {
+            cl.href = target;
+            cl.textContent = "See " + (d.communityName || "this building") +
+              " \u2014 photos & all plans";
+            cl.hidden = false;
+          }
+        }
         pm.classList.add("open");
         document.body.style.overflow = "hidden";
       }
