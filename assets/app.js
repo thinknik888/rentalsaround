@@ -133,27 +133,43 @@
   function initFilters() {
     var bar = $("#fpFilters");
     if (!bar) return;
+    var priceBar = $("#fpPrice");
     var plans = $$(".fp");
     var count = $("#fpCount");
+    var type = "all", min = 0, max = 99999;
 
-    function apply(type) {
+    function apply() {
       var shown = 0;
       plans.forEach(function (p) {
-        var match = (type === "all" || p.dataset.type === type);
-        p.hidden = !match;
-        if (match) shown++;
+        var price = Number(p.dataset.from) || 0;
+        var ok = (type === "all" || p.dataset.type === type) && price >= min && price <= max;
+        p.hidden = !ok;
+        if (ok) shown++;
       });
-      if (count) count.textContent = shown + (shown === 1 ? " floor plan" : " floor plans");
+      if (count) {
+        count.textContent = shown === 0
+          ? "Nothing in that range — try a wider budget"
+          : shown + (shown === 1 ? " suite" : " suites");
+      }
     }
 
-    $$(".chip", bar).forEach(function (chip) {
-      chip.addEventListener("click", function () {
-        $$(".chip", bar).forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
-        chip.setAttribute("aria-pressed", "true");
-        apply(chip.dataset.type);
+    function wire(container, onPick) {
+      if (!container) return;
+      $$(".chip", container).forEach(function (chip) {
+        chip.addEventListener("click", function () {
+          $$(".chip", container).forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
+          chip.setAttribute("aria-pressed", "true");
+          onPick(chip);
+          apply();
+        });
       });
+    }
+
+    wire(bar, function (chip) { type = chip.dataset.type; });
+    wire(priceBar, function (chip) {
+      min = Number(chip.dataset.min); max = Number(chip.dataset.max);
     });
-    apply("all");
+    apply();
   }
 
   // ---------- reveal on scroll ----------
