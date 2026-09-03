@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>CRM — RentalsAround</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+/* the hidden attribute must beat any display rule below it */
+[hidden]{display:none!important}
+:root{
+  --cream:#f5f2eb;--cream-dark:#ede9df;--gold:#b89a5a;--gold-light:#d4b97a;
+  --ink:#1c1a17;--muted:#6b6557;--border:#ddd8cc;--white:#fff;
+  --new:#b89a5a;--contacted:#5b7fa6;--booked:#7a5ba6;--toured:#3f8fa6;
+  --application:#c07b2a;--leased:#3f7d51;--lost:#9c5252;
+}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:Jost,system-ui,-apple-system,sans-serif;
+  font-weight:300;line-height:1.5;min-height:100vh;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:400;line-height:1.15}
+button,input,select,textarea{font-family:inherit}
+
+/* ---------- top bar ---------- */
+.bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:0 clamp(12px,2.5vw,26px);min-height:58px;
+  border-bottom:1px solid var(--border);position:sticky;top:0;z-index:60;
+  background:rgba(245,242,235,.97);backdrop-filter:blur(12px)}
+.logo{font-family:"Playfair Display",Georgia,serif;font-size:16px;text-decoration:none;white-space:nowrap}
+.logo span{color:var(--gold);font-style:italic}
+.logo b{font-weight:400;color:var(--muted);font-size:10px;letter-spacing:.2em;
+  text-transform:uppercase;margin-left:9px;font-family:Jost,sans-serif}
+.bar .grow{flex:1}
+.tabs{display:flex;gap:2px}
+.tab{font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:9px 15px;
+  border:1px solid var(--border);background:var(--cream);color:var(--muted);cursor:pointer;transition:.2s}
+.tab:hover{color:var(--gold);border-color:var(--gold)}
+.tab[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--gold-light)}
+
+.btn{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  padding:11px 16px;border:1px solid var(--border);background:var(--cream);color:var(--ink);
+  cursor:pointer;transition:.2s;text-decoration:none;display:inline-block;text-align:center}
+.btn:hover{border-color:var(--gold);color:var(--gold)}
+.btn-primary{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn-primary:hover{background:var(--gold-light);border-color:var(--gold-light);color:#fff}
+.btn-dark{background:var(--ink);border-color:var(--ink);color:var(--gold-light)}
+.btn-sm{padding:8px 12px;font-size:9px}
+.btn[disabled]{opacity:.45;cursor:default}
+
+/* ---------- sign in ---------- */
+.gate{min-height:calc(100vh - 58px);display:flex;align-items:center;justify-content:center;padding:24px}
+.gate-box{width:100%;max-width:380px}
+.gate h1{font-size:2.1rem;margin-bottom:6px}
+.gate h1 em{color:var(--gold);font-style:italic}
+.gate .lede{font-size:13px;color:var(--muted);margin-bottom:28px;line-height:1.7}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;font-size:14px;padding:12px 13px;
+  border:1px solid var(--border);background:var(--white);color:var(--ink);font-weight:300}
+.field textarea{min-height:90px;resize:vertical;line-height:1.6}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--gold)}
+.gate .btn{width:100%;padding:14px}
+.alt{margin-top:16px;text-align:center;font-size:11.5px;color:var(--muted)}
+.alt button{background:0;border:0;font-size:11.5px;color:var(--gold);cursor:pointer;
+  text-decoration:underline;padding:0}
+.msg{margin-top:16px;font-size:12.5px;line-height:1.65;padding:12px 14px;display:none}
+.msg.show{display:block}
+.msg.err{background:#f7e9e9;color:#8a3a3a}
+.msg.ok{background:#e9f2ec;color:#2f6b3f}
+
+/* ---------- shell ---------- */
+.pane{padding:clamp(16px,2.5vw,26px);max-width:1800px;margin:0 auto}
+.pane[hidden]{display:none}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+.toolbar input[type=search],.toolbar select{font-size:13px;padding:10px 12px;
+  border:1px solid var(--border);background:var(--white);color:var(--ink);font-weight:300}
+.toolbar input[type=search]{min-width:230px}
+.toolbar .grow{flex:1}
+.stamp{font-size:10.5px;color:var(--muted);letter-spacing:.05em}
+
+/* ---------- board ---------- */
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(272px,1fr);gap:12px;
+  overflow-x:auto;padding-bottom:14px;align-items:start}
+.col{background:var(--cream-dark);border:1px solid var(--border);min-height:120px;
+  display:flex;flex-direction:column}
+.col-h{padding:13px 15px;border-bottom:1px solid var(--border);display:flex;
+  align-items:center;justify-content:space-between;gap:8px;position:sticky;top:0;
+  background:var(--cream-dark);z-index:2}
+.col-h span{font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:500;
+  display:flex;align-items:center;gap:8px}
+.col-h b{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:1.05rem;color:var(--muted)}
+.col-body{padding:10px;display:grid;gap:9px;max-height:calc(100vh - 230px);overflow-y:auto}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex:0 0 8px}
+.s-new .dot{background:var(--new)}.s-contacted .dot{background:var(--contacted)}
+.s-booked .dot{background:var(--booked)}.s-toured .dot{background:var(--toured)}
+.s-application .dot{background:var(--application)}.s-leased .dot{background:var(--leased)}
+.s-lost .dot{background:var(--lost)}
+
+.card{background:var(--white);border:1px solid var(--border);padding:13px 14px;cursor:pointer;
+  transition:border-color .18s,transform .18s;text-align:left;width:100%;display:block}
+.card:hover{border-color:var(--gold);transform:translateY(-1px)}
+.card.is-hot{border-left:3px solid var(--gold)}
+.card.is-late{border-left:3px solid var(--lost)}
+.card-n{font-family:"Playfair Display",Georgia,serif;font-size:1.05rem;line-height:1.25;word-break:break-word}
+.card-m{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5}
+.card-p{display:inline-block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--gold);padding:3px 7px;margin-top:8px}
+.card-f{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-top:10px;
+  padding-top:9px;border-top:1px solid var(--border);font-size:10px;color:var(--muted)}
+.flag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px}
+.flag--late{background:#f4e4e4;color:var(--lost)}
+.flag--due{background:var(--cream-dark);color:var(--muted)}
+.col-empty{padding:24px 12px;text-align:center;font-size:11px;color:var(--muted);opacity:.7}
+
+/* ---------- today ---------- */
+.rows{display:grid;gap:1px;background:var(--border);border:1px solid var(--border)}
+.row{background:var(--white);padding:15px 17px;display:grid;
+  grid-template-columns:1fr auto;gap:14px;align-items:center;cursor:pointer}
+.row:hover{background:var(--cream)}
+.row-n{font-family:"Playfair Display",Georgia,serif;font-size:1.1rem}
+.row-m{font-size:11.5px;color:var(--muted);margin-top:3px}
+.sec-h{margin:26px 0 12px;display:flex;align-items:baseline;gap:12px}
+.sec-h h2{font-size:1.4rem}
+.sec-h h2 em{color:var(--gold);font-style:italic}
+.sec-h span{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.sec-h:first-child{margin-top:0}
+
+/* ---------- numbers ---------- */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;
+  background:var(--border);border:1px solid var(--border);margin-bottom:26px}
+.tile{background:var(--white);padding:22px 18px}
+.tile b{display:block;font-family:"Playfair Display",Georgia,serif;font-weight:400;
+  font-size:2rem;line-height:1;color:var(--gold)}
+.tile span{display:block;margin-top:8px;font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted)}
+.bars{display:grid;gap:11px}
+.bar-row{display:grid;grid-template-columns:190px 1fr 46px;gap:12px;align-items:center;font-size:12.5px}
+.bar-track{height:9px;background:var(--cream-dark);border:1px solid var(--border)}
+.bar-fill{height:100%;background:var(--gold)}
+.bar-n{text-align:right;font-size:12px;color:var(--muted)}
+@media(max-width:620px){.bar-row{grid-template-columns:110px 1fr 34px;gap:8px;font-size:11.5px}}
+
+/* ---------- detail drawer ---------- */
+.scrim{position:fixed;inset:0;background:rgba(12,10,7,.55);z-index:80;display:none}
+.scrim.open{display:block}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(760px,100%);background:var(--cream);
+  z-index:81;transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.2)}
+.drawer.open{transform:none}
+.d-head{padding:20px clamp(16px,3vw,28px);border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:flex-start;gap:14px;background:var(--cream)}
+.d-head h2{font-size:1.7rem;line-height:1.2;word-break:break-word}
+.d-head .who{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+  margin-top:7px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.x{background:0;border:0;font-size:1.9rem;line-height:1;color:var(--muted);cursor:pointer;padding:0 4px}
+.x:hover{color:var(--ink)}
+.d-body{flex:1;overflow-y:auto;padding:0 clamp(16px,3vw,28px) 32px}
+.d-sec{padding:22px 0;border-bottom:1px solid var(--border)}
+.d-sec:last-child{border-bottom:0}
+.d-sec > h3{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:14px;font-family:Jost,sans-serif;font-weight:500}
+.acts{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.stage-pick{display:flex;flex-wrap:wrap;gap:6px}
+.stage-pick button{font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;padding:9px 12px;
+  border:1px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;
+  display:flex;align-items:center;gap:7px;transition:.18s}
+.stage-pick button:hover{border-color:var(--gold);color:var(--gold)}
+.stage-pick button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* what they were looking at */
+.viewing{display:grid;grid-template-columns:230px 1fr;gap:20px;align-items:start}
+.viewing-img{background:var(--white);border:1px solid var(--border);padding:12px;cursor:zoom-in}
+.viewing-img img{width:100%;height:auto}
+.viewing-none{background:var(--cream-dark);border:1px solid var(--border);padding:36px 16px;
+  text-align:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.spec{display:grid;gap:0}
+.spec div{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:9px 0;
+  border-bottom:1px solid var(--border);align-items:baseline}
+.spec div:last-child{border-bottom:0}
+.spec dt{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.spec dd{font-size:13.5px;word-break:break-word}
+.spec dd a{color:var(--gold);text-decoration:none}
+.spec dd a:hover{text-decoration:underline}
+.spec .big{font-family:"Playfair Display",Georgia,serif;font-size:1.35rem;color:var(--gold)}
+.said{background:var(--white);border-left:2px solid var(--gold);padding:13px 15px;
+  font-size:13.5px;line-height:1.7;white-space:pre-wrap;word-break:break-word}
+@media(max-width:640px){.viewing{grid-template-columns:1fr}}
+
+/* activity */
+.log{display:grid;gap:0;margin-top:6px}
+.log-i{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:12px 0;
+  border-bottom:1px solid var(--border);align-items:start}
+.log-i:last-child{border-bottom:0}
+.log-t{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.log-b{font-size:13px;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+.log-b b{font-weight:500;display:block;font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.quick{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.quick button{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:8px 11px;
+  border:1px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer}
+.quick button:hover{border-color:var(--gold);color:var(--gold)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.two{grid-template-columns:1fr}}
+.task{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--border)}
+.task:last-child{border-bottom:0}
+.task input{margin-top:3px;width:16px;height:16px;accent-color:var(--gold);cursor:pointer;flex:0 0 16px}
+.task-b{flex:1;font-size:13px;line-height:1.5}
+.task-d{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.task.late .task-d{color:var(--lost)}
+.task.done .task-b{text-decoration:line-through;opacity:.5}
+
+.empty{border:1px solid var(--border);background:var(--cream-dark);padding:60px 24px;text-align:center}
+.empty h2{font-size:1.6rem;margin-bottom:9px}
+.empty h2 em{color:var(--gold);font-style:italic}
+.empty p{font-size:13px;color:var(--muted);max-width:48ch;margin:0 auto;line-height:1.75}
+.loading{padding:70px 0;text-align:center;font-size:10px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(80px);
+  background:var(--ink);color:var(--gold-light);padding:13px 22px;font-size:11px;
+  letter-spacing:.12em;text-transform:uppercase;z-index:120;opacity:0;
+  transition:transform .25s,opacity .25s;pointer-events:none;max-width:90vw;text-align:center}
+.toast.show{transform:translateX(-50%);opacity:1}
+.lightbox{position:fixed;inset:0;background:rgba(12,10,7,.94);z-index:200;display:none;
+  align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:92vh;object-fit:contain;background:#fff;padding:14px}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <a href="index.html" class="logo">rentals<span>around</span>.ca<b>CRM</b></a>
+  <div class="tabs" id="tabs" hidden>
+    <button class="tab" data-v="today" aria-pressed="true">Today</button>
+    <button class="tab" data-v="board" aria-pressed="false">Pipeline</button>
+    <button class="tab" data-v="stats" aria-pressed="false">Numbers</button>
+  </div>
+  <span class="grow"></span>
+  <span id="barRight"></span>
+</div>
+
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <h1>Your rentals <em>desk.</em></h1>
+    <p class="lede">Every showing request from rentalsaround.ca — who asked, which suite they were looking at, and what you owe them next.</p>
+    <form id="loginForm">
+      <div class="field">
+        <label for="em">Email</label>
+        <input type="email" id="em" autocomplete="username" required placeholder="nik@thinknik.ca">
+      </div>
+      <div class="field">
+        <label for="pw">Password</label>
+        <input type="password" id="pw" autocomplete="current-password" placeholder="••••••••">
+      </div>
+      <button type="submit" class="btn btn-primary" id="loginBtn">Sign In</button>
+    </form>
+    <p class="alt">Forgot it? <button type="button" id="magicBtn">Email me a sign-in link instead</button></p>
+    <div class="msg" id="gateMsg"></div>
+  </div>
+</div>
+
+<div class="pane" id="vToday" hidden></div>
+<div class="pane" id="vBoard" hidden>
+  <div class="toolbar">
+    <input type="search" id="q" placeholder="Search name, phone, email, suite…" aria-label="Search">
+    <select id="fComm" aria-label="Community"><option value="">Every community</option></select>
+    <span class="grow"></span>
+    <span class="stamp" id="stamp"></span>
+    <button class="btn btn-sm" id="refresh">Refresh</button>
+    <button class="btn btn-sm" id="csv">Export CSV</button>
+  </div>
+  <div id="board"><div class="loading">Loading…</div></div>
+</div>
+<div class="pane" id="vStats" hidden></div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true"></aside>
+<div class="lightbox" id="lb"><img id="lbImg" src="" alt=""></div>
+<div class="toast" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var SB_URL = "https://nxuuxmvlttncgqypalnr.supabase.co";
+  var SB_KEY = "sb_publishable_QxS2Lvq10fpmTrjY6ANfXw_m_9TWCtn";
+  var CAT_SLUG = "rentalsaround";
+
+  var STAGES = [
+    { k: "new",         t: "New" },
+    { k: "contacted",   t: "Contacted" },
+    { k: "booked",      t: "Tour booked" },
+    { k: "toured",      t: "Toured" },
+    { k: "application", t: "Application" },
+    { k: "leased",      t: "Leased" },
+    { k: "lost",        t: "Lost" }
+  ];
+  var LABEL = {}; STAGES.forEach(function (s) { LABEL[s.k] = s.t; });
+  var OPEN = ["new", "contacted", "booked", "toured", "application"];
+
+  var sb = window.supabase.createClient(SB_URL, SB_KEY);
+  var $  = function (s, r) { return (r || document).querySelector(s); };
+
+  var CAT = null, AGENT = null, PLANS = {}, COMM = {};
+  var bookings = [], leads = {}, tasks = [], events = {}, contacts = {};
+  var view = "today", q = "", fComm = "", openId = null;
+
+  /* ---------------- helpers ---------------- */
+  function esc(v) {
+    return String(v == null ? "" : v)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+  function money(n) { return "$" + Number(n).toLocaleString("en-CA"); }
+  function telHref(p) { return "tel:" + String(p || "").replace(/[^0-9+]/g, ""); }
+  function smsHref(p) { return "sms:" + String(p || "").replace(/[^0-9+]/g, ""); }
+  function dayName(d) {
+    if (!d) return null;
+    var p = String(d).slice(0, 10).split("-");
+    if (p.length !== 3) return String(d);
+    return new Date(+p[0], +p[1] - 1, +p[2])
+      .toLocaleDateString("en-CA", { weekday: "short", month: "short", day: "numeric" });
+  }
+  function ago(ts) {
+    var s = (Date.now() - new Date(ts).getTime()) / 1000;
+    if (s < 90) return "just now";
+    if (s < 5400) return Math.round(s / 60) + "m ago";
+    if (s < 172800) return Math.round(s / 3600) + "h ago";
+    return Math.round(s / 86400) + "d ago";
+  }
+  function toast(t) {
+    var el = $("#toast"); el.textContent = t; el.classList.add("show");
+    clearTimeout(el._t); el._t = setTimeout(function () { el.classList.remove("show"); }, 2600);
+  }
+  function gateMsg(t, k) {
+    var m = $("#gateMsg"); m.textContent = t; m.className = "msg show " + (k || "");
+  }
+  function stageOf(b) {
+    var l = leads[b.crm_lead_id];
+    return (l && l.status) || b.status || "new";
+  }
+  function tasksFor(id) {
+    return tasks.filter(function (t) {
+      return t.body && t.body.indexOf("booking:" + id) > -1;
+    });
+  }
+  function openTasksFor(id) { return tasksFor(id).filter(function (t) { return !t.done_at; }); }
+
+  /* the floor plan they were actually looking at */
+  function planFor(b) {
+    if (!b.floorplan_name) return null;
+    var list = PLANS[b.community_id] || [];
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].name === b.floorplan_name) return list[i];
+    }
+    return null;
+  }
+
+  /* ---------------- auth ---------------- */
+  $("#loginForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    var email = $("#em").value.trim(), pw = $("#pw").value;
+    if (!pw) { gateMsg("Enter your password, or use the sign-in link below.", "err"); return; }
+    var btn = $("#loginBtn");
+    btn.disabled = true; btn.textContent = "Signing in…";
+    var r = await sb.auth.signInWithPassword({ email: email, password: pw });
+    btn.disabled = false; btn.textContent = "Sign In";
+    if (r.error) { gateMsg(r.error.message, "err"); return; }
+    start();
+  });
+
+  $("#magicBtn").addEventListener("click", async function () {
+    var email = $("#em").value.trim();
+    if (!email) { gateMsg("Put your email in the box first.", "err"); $("#em").focus(); return; }
+    this.disabled = true;
+    var r = await sb.auth.signInWithOtp({
+      email: email, options: { emailRedirectTo: location.origin + location.pathname }
+    });
+    this.disabled = false;
+    if (r.error) gateMsg(r.error.message, "err");
+    else gateMsg("Sent. Open the link in " + email + " — it lands you here, signed in.", "ok");
+  });
+
+  /* ---------------- load ---------------- */
+  async function loadPlans() {
+    try {
+      var r = await fetch("data/fitzrovia-floorplans.json");
+      var db = await r.json();
+      (db.communities || []).forEach(function (c) {
+        PLANS[c.id] = c.floorplans || [];
+        COMM[c.id] = c;
+      });
+    } catch (e) { /* the CRM still works, just without the drawings */ }
+  }
+
+  async function load() {
+    if (!CAT) {
+      var cr = await sb.from("categories").select("id,agent_id").eq("slug", CAT_SLUG).limit(1);
+      if (cr.data && cr.data[0]) { CAT = cr.data[0].id; AGENT = cr.data[0].agent_id; }
+    }
+
+    var br = await sb.from("rent_bookings").select("*").order("created_at", { ascending: false });
+    if (br.error) {
+      $("#board").innerHTML = '<div class="empty"><h2>Can’t <em>read that.</em></h2><p>'
+        + esc(br.error.message) + "</p></div>";
+      $("#vToday").innerHTML = $("#board").innerHTML;
+      return;
+    }
+    bookings = br.data || [];
+
+    var ids = bookings.map(function (b) { return b.crm_lead_id; }).filter(Boolean);
+    leads = {};
+    if (ids.length) {
+      var lr = await sb.from("leads").select("id,status,notes,name").in("id", ids);
+      (lr.data || []).forEach(function (l) { leads[l.id] = l; });
+    }
+
+    var tr = await sb.from("tasks").select("*")
+      .eq("category_id", CAT).order("due_at", { ascending: true });
+    tasks = tr.data || [];
+
+    var er = await sb.from("contact_events").select("*")
+      .eq("category_id", CAT).order("created_at", { ascending: false }).limit(600);
+    events = {};
+    (er.data || []).forEach(function (ev) {
+      var bid = ev.meta && ev.meta.booking_id;
+      if (!bid) return;
+      (events[bid] = events[bid] || []).push(ev);
+    });
+
+    $("#stamp").textContent = bookings.length + (bookings.length === 1 ? " lead" : " leads")
+      + " · " + new Date().toLocaleTimeString("en-CA", { hour: "numeric", minute: "2-digit" });
+    buildCommFilter();
+    render();
+    if (openId) drawer(openId);
+  }
+
+  function buildCommFilter() {
+    var c = {};
+    bookings.forEach(function (b) { c[b.community_name] = (c[b.community_name] || 0) + 1; });
+    var sel = $("#fComm"), keep = sel.value;
+    sel.innerHTML = '<option value="">Every community</option>' +
+      Object.keys(c).sort().map(function (n) {
+        return '<option value="' + esc(n) + '">' + esc(n) + " (" + c[n] + ")</option>";
+      }).join("");
+    sel.value = keep;
+  }
+
+  function visible() {
+    var n = q.toLowerCase();
+    return bookings.filter(function (b) {
+      if (fComm && b.community_name !== fComm) return false;
+      if (!n) return true;
+      return [b.name, b.email, b.phone, b.community_name, b.floorplan_name, b.floorplan_type, b.note]
+        .join(" ").toLowerCase().indexOf(n) > -1;
+    });
+  }
+
+  /* ---------------- render: board ---------------- */
+  function render() {
+    if (view === "board") renderBoard();
+    else if (view === "today") renderToday();
+    else renderStats();
+  }
+
+  function cardHTML(b) {
+    var st = stageOf(b), plan = planFor(b);
+    var open = openTasksFor(b.id);
+    var late = open.filter(function (t) { return t.due_at && new Date(t.due_at) < new Date(); });
+    var untouched = (st === "new" && (Date.now() - new Date(b.created_at)) > 36e5);
+    var cls = late.length ? " is-late" : (untouched ? " is-hot" : "");
+
+    return '<button class="card s-' + esc(st) + cls + '" data-open="' + esc(b.id) + '">'
+      + '<div class="card-n">' + esc(b.name) + "</div>"
+      + '<div class="card-m">' + esc(b.community_name)
+      + (b.request_date ? " · wants " + esc(dayName(b.request_date)) : "") + "</div>"
+      + (b.floorplan_name
+          ? '<span class="card-p">' + esc(b.floorplan_name)
+            + (plan ? " · " + money(plan.from) : "") + "</span>"
+          : "")
+      + '<div class="card-f"><span>' + ago(b.created_at) + "</span>"
+      + (late.length ? '<span class="flag flag--late">' + late.length + " overdue</span>"
+         : open.length ? '<span class="flag flag--due">' + open.length + " to do</span>"
+         : untouched ? '<span class="flag flag--late">untouched</span>' : "")
+      + "</div></button>";
+  }
+
+  function renderBoard() {
+    var list = visible();
+    if (!bookings.length) { $("#board").innerHTML = emptyHTML(); return; }
+    var by = {}; STAGES.forEach(function (s) { by[s.k] = []; });
+    list.forEach(function (b) { (by[stageOf(b)] = by[stageOf(b)] || []).push(b); });
+
+    $("#board").innerHTML = '<div class="board">' + STAGES.map(function (s) {
+      var items = by[s.k] || [];
+      return '<section class="col s-' + s.k + '">'
+        + '<div class="col-h"><span><i class="dot"></i>' + s.t + "</span><b>" + items.length + "</b></div>"
+        + '<div class="col-body">'
+        + (items.length ? items.map(cardHTML).join("") : '<p class="col-empty">—</p>')
+        + "</div></section>";
+    }).join("") + "</div>";
+  }
+
+  function emptyHTML() {
+    return '<div class="empty"><h2>No leads <em>yet.</em></h2>'
+      + "<p>The second someone books a showing on rentalsaround.ca they appear here — their name and number, "
+      + "the exact suite they were looking at, and the day and time they asked for.</p></div>";
+  }
+
+  /* ---------------- render: today ---------------- */
+  function renderToday() {
+    if (!bookings.length) { $("#vToday").innerHTML = emptyHTML(); return; }
+    var now = Date.now(), html = "";
+
+    var overdue = tasks.filter(function (t) {
+      return !t.done_at && t.due_at && new Date(t.due_at).getTime() < now;
+    });
+    var soon = tasks.filter(function (t) {
+      var d = t.due_at ? new Date(t.due_at).getTime() : 0;
+      return !t.done_at && d >= now && d < now + 864e5;
+    });
+    var fresh = bookings.filter(function (b) {
+      return stageOf(b) === "new" && !openTasksFor(b.id).length;
+    });
+    var tours = bookings.filter(function (b) {
+      if (["leased", "lost"].indexOf(stageOf(b)) > -1) return false;
+      if (!b.request_date) return false;
+      var d = new Date(b.request_date + "T00:00:00").getTime();
+      return d >= now - 864e5 && d < now + 7 * 864e5;
+    }).sort(function (a, c) { return a.request_date < c.request_date ? -1 : 1; });
+
+    function taskRows(arr, late) {
+      return '<div class="rows">' + arr.map(function (t) {
+        var bid = (t.body || "").match(/booking:([0-9a-f-]+)/);
+        var b = bid ? bookings.filter(function (x) { return x.id === bid[1]; })[0] : null;
+        return '<div class="row" ' + (b ? 'data-open="' + esc(b.id) + '"' : "") + ">"
+          + "<div><div class=\"row-n\">" + esc(t.title) + "</div>"
+          + '<div class="row-m">' + (b ? esc(b.name) + " · " + esc(b.community_name) + " · " : "")
+          + (t.due_at ? new Date(t.due_at).toLocaleDateString("en-CA",
+              { weekday: "short", month: "short", day: "numeric" }) : "no date")
+          + "</div></div>"
+          + (b && b.phone ? '<a class="btn btn-primary btn-sm" href="' + telHref(b.phone)
+              + '" onclick="event.stopPropagation()">Call</a>' : "")
+          + "</div>";
+      }).join("") + "</div>";
+    }
+    function leadRows(arr, note) {
+      return '<div class="rows">' + arr.map(function (b) {
+        var plan = planFor(b);
+        return '<div class="row" data-open="' + esc(b.id) + '">'
+          + '<div><div class="row-n">' + esc(b.name) + "</div>"
+          + '<div class="row-m">' + esc(b.community_name)
+          + (b.floorplan_name ? " · " + esc(b.floorplan_name) : "")
+          + (plan ? " · " + money(plan.from) + "/mo" : "")
+          + " · " + (note === "tour" ? "asked for " + esc(dayName(b.request_date))
+                     + (b.request_time ? ", " + esc(b.request_time) : "")
+                     : "came in " + ago(b.created_at))
+          + "</div></div>"
+          + (b.phone ? '<a class="btn btn-primary btn-sm" href="' + telHref(b.phone)
+              + '" onclick="event.stopPropagation()">Call</a>' : "")
+          + "</div>";
+      }).join("") + "</div>";
+    }
+
+    if (overdue.length)
+      html += '<div class="sec-h"><h2>Overdue <em>follow-ups.</em></h2><span>' + overdue.length
+        + "</span></div>" + taskRows(overdue, true);
+    if (fresh.length)
+      html += '<div class="sec-h"><h2>Nobody has <em>called these.</em></h2><span>' + fresh.length
+        + "</span></div>" + leadRows(fresh);
+    if (tours.length)
+      html += '<div class="sec-h"><h2>Showings <em>this week.</em></h2><span>' + tours.length
+        + "</span></div>" + leadRows(tours, "tour");
+    if (soon.length)
+      html += '<div class="sec-h"><h2>Due <em>today.</em></h2><span>' + soon.length
+        + "</span></div>" + taskRows(soon);
+
+    if (!html)
+      html = '<div class="empty"><h2>All <em>clear.</em></h2><p>Nothing overdue, nobody waiting on a '
+        + "first call, no showings booked in the next seven days.</p></div>";
+    $("#vToday").innerHTML = html;
+  }
+
+  /* ---------------- render: numbers ---------------- */
+  function renderStats() {
+    if (!bookings.length) { $("#vStats").innerHTML = emptyHTML(); return; }
+    var now = Date.now();
+    var wk = bookings.filter(function (b) { return now - new Date(b.created_at) < 7 * 864e5; });
+    var mo = bookings.filter(function (b) { return now - new Date(b.created_at) < 30 * 864e5; });
+    var openN = bookings.filter(function (b) { return OPEN.indexOf(stageOf(b)) > -1; });
+    var leased = bookings.filter(function (b) { return stageOf(b) === "leased"; });
+    var rate = bookings.length ? Math.round(leased.length / bookings.length * 100) : 0;
+
+    function group(fn) {
+      var m = {};
+      bookings.forEach(function (b) { var k = fn(b); if (k) m[k] = (m[k] || 0) + 1; });
+      return Object.keys(m).map(function (k) { return [k, m[k]]; })
+        .sort(function (a, b) { return b[1] - a[1]; });
+    }
+    function bars(rows) {
+      var max = rows.reduce(function (m, r) { return Math.max(m, r[1]); }, 1);
+      return '<div class="bars">' + rows.map(function (r) {
+        return '<div class="bar-row"><span>' + esc(r[0]) + "</span>"
+          + '<span class="bar-track"><span class="bar-fill" style="width:'
+          + Math.round(r[1] / max * 100) + '%"></span></span>'
+          + '<span class="bar-n">' + r[1] + "</span></div>";
+      }).join("") + "</div>";
+    }
+
+    $("#vStats").innerHTML =
+      '<div class="tiles">'
+      + '<div class="tile"><b>' + bookings.length + "</b><span>Leads all time</span></div>"
+      + '<div class="tile"><b>' + mo.length + "</b><span>Last 30 days</span></div>"
+      + '<div class="tile"><b>' + wk.length + "</b><span>Last 7 days</span></div>"
+      + '<div class="tile"><b>' + openN.length + "</b><span>Open right now</span></div>"
+      + '<div class="tile"><b>' + leased.length + "</b><span>Leased</span></div>"
+      + '<div class="tile"><b>' + rate + "%</b><span>Lead to lease</span></div>"
+      + "</div>"
+      + '<div class="sec-h"><h2>Which <em>buildings.</em></h2></div>'
+      + bars(group(function (b) { return b.community_name; }))
+      + '<div class="sec-h"><h2>Which <em>suites.</em></h2></div>'
+      + bars(group(function (b) { return b.floorplan_name
+          ? b.floorplan_name + " (" + b.community_name + ")" : null; }).slice(0, 12))
+      + '<div class="sec-h"><h2>Which <em>size.</em></h2></div>'
+      + bars(group(function (b) { return b.floorplan_type; }))
+      + '<div class="sec-h"><h2>Where they <em>are in the pipeline.</em></h2></div>'
+      + bars(STAGES.map(function (s) {
+          return [s.t, bookings.filter(function (b) { return stageOf(b) === s.k; }).length];
+        }).filter(function (r) { return r[1]; }));
+  }
+
+  /* ---------------- detail drawer ---------------- */
+  function drawer(id) {
+    var b = bookings.filter(function (x) { return x.id === id; })[0];
+    if (!b) return;
+    openId = id;
+    var st = stageOf(b), plan = planFor(b), c = COMM[b.community_id] || {};
+    var log = (events[id] || []);
+    var mine = tasksFor(id);
+
+    var viewing = plan
+      ? '<div class="viewing">'
+        + '<div class="viewing-img" data-zoom="' + esc(plan.img) + '">'
+        + '<img src="' + esc(plan.img) + '" alt="' + esc(plan.name) + ' floor plan" loading="lazy"></div>'
+        + '<dl class="spec">'
+        + "<div><dt>Suite</dt><dd>" + esc(plan.name) + "</dd></div>"
+        + "<div><dt>Type</dt><dd>" + esc(plan.type) + "</dd></div>"
+        + "<div><dt>Size</dt><dd>" + Number(plan.sqft).toLocaleString() + " sq ft</dd></div>"
+        + '<div><dt>Asking rent</dt><dd class="big">' + money(plan.from) + "<small>/mo</small></dd></div>"
+        + "<div><dt>Building</dt><dd>" + esc(c.building || b.community_name)
+          + (c.location ? " · " + esc(c.location) : "") + "</dd></div>"
+        + "<div><dt>Their page</dt><dd><a href=\"" + esc(b.community_id)
+          + '.html" target="_blank" rel="noopener">Open what they saw &#8599;</a></dd></div>'
+        + "</dl></div>"
+      : '<div class="viewing">'
+        + '<div class="viewing-none">No specific suite<br>— general enquiry</div>'
+        + '<dl class="spec">'
+        + "<div><dt>Building</dt><dd>" + esc(c.building || b.community_name) + "</dd></div>"
+        + (c.location ? "<div><dt>Where</dt><dd>" + esc(c.location) + "</dd></div>" : "")
+        + (c.rentsFrom ? "<div><dt>Rents from</dt><dd>" + esc(c.rentsFrom) + "</dd></div>" : "")
+        + "<div><dt>Their page</dt><dd><a href=\"" + esc(b.community_id)
+          + '.html" target="_blank" rel="noopener">Open what they saw &#8599;</a></dd></div>'
+        + "</dl></div>";
+
+    var device = b.user_agent
+      ? (/iPhone|Android|Mobile/i.test(b.user_agent) ? "Phone" : "Desktop")
+      : null;
+
+    $("#drawer").innerHTML =
+      '<div class="d-head"><div>'
+      + "<h2>" + esc(b.name) + "</h2>"
+      + '<p class="who s-' + esc(st) + '"><i class="dot"></i>' + esc(LABEL[st] || st)
+      + " · came in " + ago(b.created_at) + (device ? " · on " + device : "") + "</p>"
+      + '</div><button class="x" id="dx" aria-label="Close">&times;</button></div>'
+
+      + '<div class="d-body">'
+
+      /* reach them */
+      + '<div class="d-sec"><h3>Reach them</h3><div class="acts">'
+      + (b.phone ? '<a class="btn btn-primary" href="' + telHref(b.phone) + '">Call ' + esc(b.phone) + "</a>" : "")
+      + (b.phone ? '<a class="btn" href="' + smsHref(b.phone) + '">Text</a>' : "")
+      + (b.email ? '<a class="btn" href="mailto:' + esc(b.email) + "?subject="
+          + encodeURIComponent("Your showing at " + b.community_name) + '">Email</a>' : "")
+      + "</div>"
+      + (b.email ? '<p style="margin-top:10px;font-size:12.5px;color:var(--muted)">' + esc(b.email) + "</p>" : "")
+      + "</div>"
+
+      /* what they were looking at */
+      + '<div class="d-sec"><h3>What they were looking at</h3>' + viewing + "</div>"
+
+      /* what they asked for */
+      + '<div class="d-sec"><h3>What they asked for</h3><dl class="spec">'
+      + "<div><dt>Showing</dt><dd>" + (b.request_date ? esc(dayName(b.request_date)) : "No date given")
+        + (b.request_time ? " · " + esc(b.request_time) : "") + "</dd></div>"
+      + "<div><dt>Move-in</dt><dd>" + (b.move_in ? esc(dayName(b.move_in)) : "Not said") + "</dd></div>"
+      + "<div><dt>Came in</dt><dd>" + new Date(b.created_at).toLocaleString("en-CA",
+          { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })
+        + "</dd></div>"
+      + (b.source_path ? "<div><dt>From page</dt><dd>" + esc(b.source_path) + "</dd></div>" : "")
+      + "</dl>"
+      + (b.note ? '<p style="margin-top:14px" class="said">' + esc(b.note) + "</p>" : "")
+      + "</div>"
+
+      /* stage */
+      + '<div class="d-sec"><h3>Where it stands</h3><div class="stage-pick">'
+      + STAGES.map(function (s) {
+          return '<button class="s-' + s.k + '" data-stage="' + s.k + '" aria-pressed="'
+            + (s.k === st) + '"><i class="dot"></i>' + s.t + "</button>";
+        }).join("")
+      + "</div></div>"
+
+      /* follow-ups */
+      + '<div class="d-sec"><h3>Follow-ups</h3>'
+      + (mine.length ? mine.map(function (t) {
+          var late = !t.done_at && t.due_at && new Date(t.due_at) < new Date();
+          return '<div class="task' + (t.done_at ? " done" : "") + (late ? " late" : "") + '">'
+            + '<input type="checkbox" data-task="' + esc(t.id) + '"' + (t.done_at ? " checked" : "") + ">"
+            + '<div class="task-b">' + esc(t.title)
+            + '<div class="task-d">' + (t.due_at
+                ? new Date(t.due_at).toLocaleDateString("en-CA",
+                    { weekday: "short", month: "short", day: "numeric" })
+                : "no date") + (late ? " · overdue" : "") + "</div></div></div>";
+        }).join("") : '<p style="font-size:12.5px;color:var(--muted)">Nothing scheduled.</p>')
+      + '<div class="two" style="margin-top:14px">'
+      + '<div class="field" style="margin:0"><label for="tTitle">What needs doing</label>'
+      + '<input type="text" id="tTitle" placeholder="Call back about parking"></div>'
+      + '<div class="field" style="margin:0"><label for="tDue">When</label>'
+      + '<input type="date" id="tDue"></div></div>'
+      + '<button class="btn btn-dark" id="tAdd" style="margin-top:10px">Add follow-up</button>'
+      + "</div>"
+
+      /* activity */
+      + '<div class="d-sec"><h3>Activity</h3>'
+      + '<div class="quick">'
+      + '<button data-log="Called — no answer">Called, no answer</button>'
+      + '<button data-log="Called — spoke">Called, spoke</button>'
+      + '<button data-log="Texted">Texted</button>'
+      + '<button data-log="Emailed">Emailed</button>'
+      + '<button data-log="Showing confirmed">Showing confirmed</button>'
+      + "</div>"
+      + '<div class="field" style="margin:0">'
+      + '<textarea id="nNote" placeholder="What happened? Anything they said you want to remember."></textarea></div>'
+      + '<button class="btn btn-primary" id="nAdd" style="margin-top:9px">Save note</button>'
+      + '<div class="log">'
+      + '<div class="log-i"><div class="log-t">' + new Date(b.created_at)
+          .toLocaleDateString("en-CA", { month: "short", day: "numeric" }) + "</div>"
+      + '<div class="log-b"><b>Booked online</b>' + esc(b.community_name)
+        + (b.floorplan_name ? " — " + esc(b.floorplan_name) : "") + "</div></div>"
+      + log.map(function (ev) {
+          return '<div class="log-i"><div class="log-t">' + new Date(ev.created_at)
+            .toLocaleDateString("en-CA", { month: "short", day: "numeric" }) + "</div>"
+            + '<div class="log-b"><b>' + esc(ev.kind) + "</b>" + esc(ev.body || "") + "</div></div>";
+        }).join("")
+      + "</div></div>"
+
+      + "</div>";
+
+    $("#drawer").classList.add("open");
+    $("#drawer").setAttribute("aria-hidden", "false");
+    $("#scrim").classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeDrawer() {
+    openId = null;
+    $("#drawer").classList.remove("open");
+    $("#drawer").setAttribute("aria-hidden", "true");
+    $("#scrim").classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  /* ---------------- writes ---------------- */
+  /* an activity entry needs a contact row; make one the first time we need it */
+  async function ensureContact(b) {
+    if (contacts[b.id]) return contacts[b.id];
+    var found = null;
+    var digits = String(b.phone || "").replace(/[^0-9]/g, "");
+    if (b.email) {
+      var r1 = await sb.from("contacts").select("id").eq("category_id", CAT)
+        .ilike("email", b.email).limit(1);
+      if (r1.data && r1.data[0]) found = r1.data[0].id;
+    }
+    if (!found && digits) {
+      var r2 = await sb.from("contacts").select("id,phone").eq("category_id", CAT).limit(400);
+      (r2.data || []).some(function (c) {
+        if (String(c.phone || "").replace(/[^0-9]/g, "") === digits) { found = c.id; return true; }
+        return false;
+      });
+    }
+    if (!found) {
+      var ins = await sb.from("contacts").insert({
+        name: b.name, phone: b.phone, email: b.email,
+        bucket: "lead", stage: "new", contact_type: "renter",
+        hood: b.community_name, source: "rentalsaround.ca", source_channel: "website",
+        category_id: CAT, agent_id: AGENT, last_touch_at: new Date().toISOString()
+      }).select("id").single();
+      if (ins.error) { toast("Couldn't save: " + ins.error.message); return null; }
+      found = ins.data.id;
+    }
+    contacts[b.id] = found;
+    return found;
+  }
+
+  async function logEvent(b, kind, body) {
+    var cid = await ensureContact(b);
+    if (!cid) return;
+    var r = await sb.from("contact_events").insert({
+      contact_id: cid, kind: kind, body: body,
+      meta: { booking_id: b.id, community: b.community_id, floorplan: b.floorplan_name },
+      category_id: CAT, agent_id: AGENT
+    });
+    if (r.error) { toast("Couldn't save: " + r.error.message); return; }
+    await sb.from("contacts").update({ last_touch_at: new Date().toISOString() }).eq("id", cid);
+    toast("Saved");
+    await load();
+  }
+
+  async function setStage(b, stage) {
+    var ok = true;
+    if (b.crm_lead_id) {
+      var r = await sb.from("leads").update({ status: stage }).eq("id", b.crm_lead_id);
+      if (r.error) ok = false;
+    }
+    var r2 = await sb.from("rent_bookings")
+      .update({ status: stage, updated_at: new Date().toISOString() }).eq("id", b.id);
+    if (r2.error) ok = false;
+    if (!ok) { toast("Couldn't move that"); return; }
+    if (b.crm_lead_id && leads[b.crm_lead_id]) leads[b.crm_lead_id].status = stage;
+    b.status = stage;
+    toast("Moved to " + (LABEL[stage] || stage));
+    await logEvent(b, "stage", "Moved to " + (LABEL[stage] || stage));
+  }
+
+  async function addTask(b, title, due) {
+    var r = await sb.from("tasks").insert({
+      agent_id: AGENT, category_id: CAT,
+      title: title,
+      body: "booking:" + b.id + " · " + b.name + " · " + b.community_name,
+      due_at: due ? new Date(due + "T09:00:00").toISOString() : null,
+      remind_channel: "none"
+    });
+    if (r.error) { toast("Couldn't add: " + r.error.message); return; }
+    toast("Follow-up added");
+    await load();
+  }
+
+  /* ---------------- events ---------------- */
+  document.addEventListener("click", async function (e) {
+    var t;
+
+    if ((t = e.target.closest("[data-open]"))) { drawer(t.dataset.open); return; }
+    if (e.target.id === "dx" || e.target.id === "scrim") { closeDrawer(); return; }
+
+    if ((t = e.target.closest(".tab"))) {
+      view = t.dataset.v;
+      Array.prototype.forEach.call(document.querySelectorAll(".tab"), function (x) {
+        x.setAttribute("aria-pressed", String(x.dataset.v === view));
+      });
+      $("#vToday").hidden = view !== "today";
+      $("#vBoard").hidden = view !== "board";
+      $("#vStats").hidden = view !== "stats";
+      render();
+      return;
+    }
+
+    if ((t = e.target.closest("[data-zoom]"))) {
+      $("#lbImg").src = t.dataset.zoom; $("#lb").classList.add("open"); return;
+    }
+    if (e.target.closest("#lb")) { $("#lb").classList.remove("open"); return; }
+
+    var b = bookings.filter(function (x) { return x.id === openId; })[0];
+
+    if ((t = e.target.closest("[data-stage]")) && b) { await setStage(b, t.dataset.stage); return; }
+    if ((t = e.target.closest("[data-log]")) && b) { await logEvent(b, "note", t.dataset.log); return; }
+
+    if (e.target.id === "nAdd" && b) {
+      var v = $("#nNote").value.trim();
+      if (!v) { toast("Nothing to save"); return; }
+      e.target.disabled = true;
+      await logEvent(b, "note", v);
+      return;
+    }
+    if (e.target.id === "tAdd" && b) {
+      var title = $("#tTitle").value.trim();
+      if (!title) { toast("Say what needs doing"); return; }
+      e.target.disabled = true;
+      await addTask(b, title, $("#tDue").value);
+      return;
+    }
+    if (e.target.id === "out") { await sb.auth.signOut(); location.reload(); return; }
+    if (e.target.id === "refresh") { load(); return; }
+    if (e.target.id === "csv") { exportCsv(); return; }
+  });
+
+  document.addEventListener("change", async function (e) {
+    var cb = e.target.closest("[data-task]");
+    if (cb) {
+      var r = await sb.from("tasks")
+        .update({ done_at: cb.checked ? new Date().toISOString() : null })
+        .eq("id", cb.dataset.task);
+      if (r.error) { toast("Couldn't save"); cb.checked = !cb.checked; return; }
+      await load();
+      return;
+    }
+    if (e.target.id === "fComm") { fComm = e.target.value; render(); }
+  });
+
+  document.addEventListener("input", function (e) {
+    if (e.target.id === "q") { q = e.target.value.trim(); render(); }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      if ($("#lb").classList.contains("open")) $("#lb").classList.remove("open");
+      else closeDrawer();
+    }
+  });
+
+  function exportCsv() {
+    var cols = ["created_at", "name", "phone", "email", "community_name", "floorplan_name",
+                "floorplan_type", "floorplan_sqft", "request_date", "request_time",
+                "move_in", "note", "status"];
+    var out = [cols.concat(["stage", "asking_rent"]).join(",")].concat(visible().map(function (b) {
+      var plan = planFor(b);
+      return cols.map(function (c) {
+        return '"' + String(b[c] == null ? "" : b[c]).replace(/"/g, '""') + '"';
+      }).concat(['"' + (LABEL[stageOf(b)] || "") + '"', '"' + (plan ? plan.from : "") + '"']).join(",");
+    })).join("\n");
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([out], { type: "text/csv" }));
+    a.download = "rentalsaround-leads-" + new Date().toISOString().slice(0, 10) + ".csv";
+    a.click(); URL.revokeObjectURL(a.href);
+  }
+
+  /* ---------------- boot ---------------- */
+  async function start() {
+    $("#gate").hidden = true;
+    $("#tabs").hidden = false;
+    $("#vToday").hidden = false;
+    var u = await sb.auth.getUser();
+    var em = u && u.data && u.data.user ? u.data.user.email : "";
+    $("#barRight").innerHTML = '<button class="btn btn-sm" id="out">Sign out'
+      + (em ? " · " + esc(em) : "") + "</button>";
+    await loadPlans();
+    await load();
+  }
+
+  sb.auth.getSession().then(function (r) { if (r.data && r.data.session) start(); });
+  sb.auth.onAuthStateChange(function (evt, session) {
+    if (session && $("#gate").hidden === false) start();
+  });
+})();
+</script>
+</body></html>
