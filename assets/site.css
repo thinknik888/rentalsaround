@@ -503,3 +503,18 @@ footer{background:#111;padding:36px clamp(20px,4vw,48px);display:flex;justify-co
 .promo-actions .btn{padding:14px 10px;font-size:9.5px;letter-spacing:.12em}
 @media(max-width:400px){.promo-actions{grid-template-columns:1fr}}
 .plan-link{font-size:9.5px;letter-spacing:.11em;padding:14px 16px}
+
+/* promo warning ribbon + community-page notice */
+.ribbon--warn{background:var(--ink);color:#fff}
+.ribbon--warn .ribbon-tag{background:var(--gold);color:#fff}
+.ribbon--warn .ribbon-item::before{background:var(--gold-light)}
+.ribbon-link{color:#fff;font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  text-decoration:none;border-bottom:1px solid rgba(255,255,255,.55);padding-bottom:2px;
+  transition:border-color .2s}
+.ribbon-link:hover{border-bottom-color:#fff}
+.ribbon-link::after{content:" →"}
+.ribbon-note{background:var(--cream-dark);border-bottom:1px solid var(--border);
+  text-align:center;font-size:10.5px;color:var(--ink-muted);
+  padding:9px clamp(20px,4vw,48px);letter-spacing:.02em}
+.ribbon-tag{background:rgba(255,255,255,.3)}
+.ribbon-note{color:#6b6557;font-size:11px}
