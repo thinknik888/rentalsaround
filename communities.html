@@ -10,12 +10,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <style>
-.comm-top{padding:116px 0 6px}
+.comm-top{padding:86px 0 0}
 .comm-grid{margin-bottom:52px}
 .comm-grid .card-name em{font-style:italic;color:var(--gold);display:block;margin-top:2px}
 .comm-grid .card-name{line-height:1.18}
 .comm-grid .card-price{font-size:12.5px}
-@media(max-width:640px){.comm-top{padding-top:92px}}
+.comm-head{display:flex;align-items:baseline;justify-content:space-between;gap:18px;flex-wrap:wrap;margin:0 0 20px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.comm-h1{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:clamp(24px,3vw,34px);line-height:1.1;margin:0}
+.comm-h1 em{font-style:italic;color:var(--gold)}
+.comm-note{margin:0;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-muted)}
+@media(max-width:640px){.comm-top{padding-top:76px}.comm-head{gap:6px}}
 </style>
 </head>
 <body>
@@ -31,15 +35,14 @@
 </nav>
 
 <section class="comm-top"><div class="wrap">
-  <div class="section-head reveal">
-    <p class="eyebrow">Toronto &amp; GTA &nbsp;·&nbsp; Builder-owned rentals</p>
-    <h1 class="search-h1">Every community.<br><em>Pick your area.</em></h1>
-    <p class="sub" style="margin-top:12px">Seven builder-owned communities, 164 floor plans. Open a community for every plan, price, rendering, amenity and current promotion.</p>
+  <div class="comm-head">
+    <h1 class="comm-h1">Every community. <em>Pick your area.</em></h1>
+    <p class="comm-note">7 communities &nbsp;·&nbsp; 164 floor plans &nbsp;·&nbsp; from $1,775/mo</p>
   </div>
 </div></section>
 
-<section><div class="wrap">
-    <div class="grid comm-grid reveal">
+<section style="padding-top:0"><div class="wrap">
+    <div class="grid comm-grid">
       <a class="card card--photo" href="elm-ledbury.html">
         <img class="card-img" src="assets/photos/elm-ledbury/amenities-existing/existing-01.webp" alt="Elm-Ledbury — Eaton Centre" loading="lazy" decoding="async">
         <span class="badge">Up to 2 Months Free Rent</span>
@@ -49,7 +52,7 @@
         <p class="card-price">From $2,400<span class="ast">*</span>/mo &nbsp;→</p>
       </a>
       <a class="card card--photo" href="maddox-tyndall.html">
-        <img class="card-img" src="assets/photos/maddox-tyndall/amenities-existing/existing-01.webp" alt="Maddox Tyndall — Liberty Village" loading="lazy" decoding="async">
+        <img class="card-img" src="assets/photos/maddox-tyndall/amenities-existing/existing-03.webp" alt="Maddox Tyndall — Liberty Village" loading="lazy" decoding="async">
         <span class="badge">1-Month Free on a 12-Month Lease</span>
         <p class="card-name">Rentals around<br><em>Liberty Village</em></p>
         <p class="card-meta">Maddox Tyndall &nbsp;·&nbsp; King &amp; Dufferin</p>
@@ -57,7 +60,7 @@
         <p class="card-price">From $1,775<span class="ast">*</span>/mo &nbsp;→</p>
       </a>
       <a class="card card--photo" href="maddox-cabbagetown.html">
-        <img class="card-img" src="assets/photos/maddox-cabbagetown/amenities/amenities-01.webp" alt="Maddox Cabbagetown — Cabbagetown" loading="lazy" decoding="async">
+        <img class="card-img" src="assets/photos/maddox-cabbagetown/amenities/amenities-14.webp" alt="Maddox Cabbagetown — Cabbagetown" loading="lazy" decoding="async">
         <span class="badge">1-Month Free on a 12-Month Lease</span>
         <p class="card-name">Rentals around<br><em>Cabbagetown</em></p>
         <p class="card-meta">Maddox Cabbagetown &nbsp;·&nbsp; Shuter &amp; Sherbourne</p>
@@ -65,7 +68,7 @@
         <p class="card-price">From $1,995<span class="ast">*</span>/mo &nbsp;→</p>
       </a>
       <a class="card card--photo" href="sloane-south.html">
-        <img class="card-img" src="assets/photos/sloane-south/amenities/amenities-01.webp" alt="Sloane — South Tower — Yorkdale" loading="lazy" decoding="async">
+        <img class="card-img" src="assets/photos/sloane-south/amenities/amenities-16.webp" alt="Sloane — South Tower — Yorkdale" loading="lazy" decoding="async">
         <span class="badge">Up to 2 Months Free Rent</span>
         <p class="card-name">Rentals around<br><em>Yorkdale</em></p>
         <p class="card-meta">Sloane — South Tower &nbsp;·&nbsp; Dufferin &amp; 401</p>
@@ -73,7 +76,7 @@
         <p class="card-price">From $2,200<span class="ast">*</span>/mo &nbsp;→</p>
       </a>
       <a class="card card--photo" href="sloane-west-east.html">
-        <img class="card-img" src="assets/photos/sloane-west-east/amenities/amenities-01.webp" alt="Sloane — West &amp; East Towers — Yorkdale" loading="lazy" decoding="async">
+        <img class="card-img" src="assets/photos/sloane-west-east/amenities/amenities-05.webp" alt="Sloane — West &amp; East Towers — Yorkdale" loading="lazy" decoding="async">
         <span class="badge">Up to 2 Months Free Rent</span>
         <p class="card-name">Rentals around<br><em>Yorkdale</em></p>
         <p class="card-meta">Sloane — West &amp; East Towers &nbsp;·&nbsp; Dufferin &amp; 401</p>
@@ -81,7 +84,7 @@
         <p class="card-price">From $2,975<span class="ast">*</span>/mo &nbsp;→</p>
       </a>
       <a class="card card--photo" href="parker.html">
-        <img class="card-img" src="assets/photos/parker/amenities/amenities-01.webp" alt="Parker — Yonge &amp; Eglinton" loading="lazy" decoding="async">
+        <img class="card-img" src="assets/photos/parker/amenities/amenities-07.webp" alt="Parker — Yonge &amp; Eglinton" loading="lazy" decoding="async">
         <span class="badge">Up to 2 Months Free Rent</span>
         <p class="card-name">Rentals around<br><em>Yonge &amp; Eglinton</em></p>
         <p class="card-meta">Parker &nbsp;·&nbsp; Yonge &amp; Eglinton</p>
